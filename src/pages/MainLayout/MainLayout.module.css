@@ -1,0 +1,10 @@
+.mainlayout {
+    background-image: url('../../assets/images/background-img.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    width: 100%; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

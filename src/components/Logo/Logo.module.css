@@ -1,0 +1,40 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.logo {
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+}
+
+.logo.main {
+  font-size: 50px;
+  color: #fff;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards; 
+}
+
+.logo.home {
+  font-size: 20px;
+  color: #fff;
+}
+
+.iconMain {
+    margin-left: 4.4px;
+    margin-right: 4.4px;
+    fill: #f6b83d;
+}
+
+.iconHome {
+  margin-left: 1.7px;
+  margin-right: 1.7px;
+  fill: #fff;
+}
+
+
