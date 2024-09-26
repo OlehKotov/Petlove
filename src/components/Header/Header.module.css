@@ -1,5 +1,22 @@
 .header {
-  width: 295px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 295px;
   height: 40px;
-  background-color: #f6b83d;
+  background-color: inherit;
+  margin: 0 auto;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
 }

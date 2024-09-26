@@ -1,0 +1,44 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.mobMenuLogInBtn {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 12px 67px;
+  width: 178px;
+  height: 42px;
+  background-color: #f6b83d;
+  transition: background-color 0.3s ease;
+}
+
+.mobMenuLogInBtn:hover,
+.mobMenuLogInBtn:active {
+  background-color: #f9b020;
+}
+
+.mobMenuRegistrationBtn {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #f6b83d;
+  padding: 12px 41px;
+  width: 178px;
+  height: 42px;
+  background-color: #fff4df;
+  transition: background-color 0.3s ease;
+}
+
+.mobMenuRegistrationBtn:hover,
+.mobMenuRegistrationBtn:active {
+  background-color: #fbe7c1;
+}

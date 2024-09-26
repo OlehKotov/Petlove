@@ -1,0 +1,20 @@
+.home {
+    position: relative;
+}
+
+.blockWithText, .blockWithImg {
+    border-radius: 30px;
+    width: 100%; 
+    max-width: 335px;
+}
+
+.blockWithText {
+  height: 390px;
+  background-color: #f6b83d;
+}
+
+.blockWithImg {
+  height: 402px;
+  background-image: url(../../assets/images/backgroundBlockImg.png);
+  background-size: cover;
+}

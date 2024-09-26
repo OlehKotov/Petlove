@@ -1,0 +1,41 @@
+
+.burgerMenu {
+  position: relative;
+}
+
+.burgerButton {
+  position: relative;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  z-index: 1005;
+}
+
+.menu {
+  display: none;
+  position: fixed;
+  top: -20px;
+  right: -18px;
+  background: #fff;
+  overflow: hidden;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.menuOpen {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 218px;
+  height: 812px;
+  padding-top: 236px;
+}
+

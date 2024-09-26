@@ -55,7 +55,31 @@
     <g id="icomoon-ignore"></g>
     <path d="M590.418 158.861c-107.091-126.443-285.674-160.456-419.852-44.672s-153.069 309.369-47.698 446.307c67.49 87.71 240.336 250.355 355.887 355.961 38.4 35.1 57.599 52.649 80.597 59.683 19.77 6.049 42.361 6.049 62.131 0 22.997-7.034 42.197-24.584 80.597-59.683 115.553-105.606 288.396-268.251 355.886-355.961 105.37-136.938 88.789-331.741-47.695-446.307s-312.761-81.771-419.853 44.672z"></path>
   </symbol>
+<symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="burger-menu">
+    <path d="M4 16H28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M4 8H28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M4 24H28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+  </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="x_black">
+    <path d="M24 8L8 24" stroke="#262626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M8 8L24 24" stroke="#262626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+  </symbol>
+
+   <symbol version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" id="burger">
+    <g id="icomoon-ignore"></g>
+    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="96" stroke="" d="M128 512h768"></path>
+    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="96" stroke="" d="M128 256h768"></path>
+    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="96" stroke="" d="M128 768h768"></path>
+  </symbol>
+  <symbol version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" id="x">
+    <g id="icomoon-ignore"></g>
+    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="96" stroke="" d="M768 256l-512 512"></path>
+    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="96" stroke="" d="M256 256l512 512"></path>
+  </symbol>
 </svg>
+
+
+
 
 
 

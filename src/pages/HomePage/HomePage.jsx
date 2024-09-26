@@ -1,11 +1,11 @@
 import React from 'react'
 import css from "./HomePage.module.css";
-import Header from '../../components/Header/Header';
+import Main from '../../components/Main/Main';
 
 const HomePage = () => {
   return (
-    <div>
-      <Header />
+    <div className={css.container}>
+      <Main />
     </div>
   )
 }
