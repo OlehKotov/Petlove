@@ -22,10 +22,19 @@
   display: none;
   position: fixed;
   top: -20px;
-  right: -18px;
-  background: #fff;
+  right: -39px;
   overflow: hidden;
   transition: width 0.3s ease, height 0.3s ease;
+}
+
+.menuWhite {
+  background-color: #fff;
+  stroke: #000000;
+}
+
+.menuOrange {
+  background-color: #F6B83D;
+  stroke: #ffffff;
 }
 
 .menuOpen {

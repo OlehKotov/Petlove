@@ -10,7 +10,7 @@ const Loader = ({ onComplete }) => {
       setProgress((oldProgress) => {
         if (oldProgress === 100) {
           clearInterval(interval);
-          onComplete();
+          setTimeout(onComplete, 0);
           return oldProgress;
         }
         return Math.min(oldProgress + 10, 100);

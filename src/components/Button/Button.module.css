@@ -19,6 +19,15 @@
   transition: background-color 0.3s ease;
 }
 
+.mobMenuLogInBtnOrange {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.mobMenuLogInBtnOrange:hover,
+.mobMenuLogInBtnOrange:active {
+  border: none;
+}
+
 .mobMenuLogInBtn:hover,
 .mobMenuLogInBtn:active {
   background-color: #f9b020;

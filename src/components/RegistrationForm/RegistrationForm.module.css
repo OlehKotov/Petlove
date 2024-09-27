@@ -1,0 +1,38 @@
+.containerForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.registerImg {
+  border-radius: 30px;
+  width: 335px;
+  height: 280px;
+  background-image: url("../../assets/images/cat-mob-min.jpg");
+  background-size: cover;
+  margin-top: 80px;
+}
+
+.registerForm {
+  border-radius: 30px;
+  width: 335px;
+  height: 422px;
+  background-color: #fff;
+  padding: 27px 20px;
+}
+
+.headerForm {
+  font-weight: 700;
+font-size: 28px;
+line-height: 100%;
+letter-spacing: -0.04em;
+color: #262626;
+}
+
+.textForm {
+  font-weight: 500;
+font-size: 14px;
+line-height: 129%;
+letter-spacing: -0.02em;
+color: #262626;
+margin-top: 12px;
+}

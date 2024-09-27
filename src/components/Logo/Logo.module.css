@@ -25,6 +25,11 @@
   color: #fff;
 }
 
+.logo.auth {
+  font-size: 20px;
+  color: #262626;
+}
+
 .iconMain {
     margin-left: 4.4px;
     margin-right: 4.4px;
@@ -35,6 +40,12 @@
   margin-left: 1.7px;
   margin-right: 1.7px;
   fill: #fff;
+}
+
+.iconAuth {
+  margin-left: 1.7px;
+  margin-right: 1.7px;
+  fill: #f6b83d;
 }
 
 

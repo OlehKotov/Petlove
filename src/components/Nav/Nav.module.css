@@ -1,17 +1,16 @@
 .nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
 
 .link {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid;
-  border-color: rgba(38, 38, 38, 0.15);
   border-radius: 30px;
   padding: 15px 20px;
   width: 119px;
@@ -20,16 +19,33 @@
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.03em;
-  color: #262626;
   transition: border-color 0.3s ease;
 }
 
-.link:hover,
-.link:active {
-  border-color: #f6b83d;
+.linkWhite {
+  border-color: rgba(38, 38, 38, 0.15);
+  color: #262626;
 }
-.active {
-  /* position: relative; */
+
+.linkOrange {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.linkWhite:hover,
+.linkWhite:active {
   border-color: #f6b83d;
 }
 
+.activeWhite {
+  border-color: #f6b83d;
+}
+
+.linkOrange:hover,
+.linkOrange:active {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.activeOrange {
+  border-color: rgba(255, 255, 255, 0.5);
+}
