@@ -7,6 +7,7 @@ const RegistrationPage = () => {
   return (
     <div className={css.container}>
       <Header
+        isHeaderAuth="headerAuth"
         variant="auth"
         width="17"
         height="13"
@@ -14,7 +15,7 @@ const RegistrationPage = () => {
         burgerColor="#000000"
         closeColor="#ffffff"
         menuClass="menuOrange"
-        authTheme="mobMenuLogInBtnOrange"
+        authNav="mobMenuLogInBtnOrange"
       />
       <RegistrationForm />
     </div>

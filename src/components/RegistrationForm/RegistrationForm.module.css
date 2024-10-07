@@ -3,15 +3,6 @@
   flex-direction: column;
 }
 
-.registerImg {
-  border-radius: 30px;
-  width: 335px;
-  height: 280px;
-  background-image: url("../../assets/images/cat-mob-min.jpg");
-  background-size: cover;
-  margin-top: 80px;
-}
-
 .registerForm {
   border-radius: 30px;
   width: 335px;
@@ -22,17 +13,115 @@
 
 .headerForm {
   font-weight: 700;
-font-size: 28px;
-line-height: 100%;
-letter-spacing: -0.04em;
-color: #262626;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  color: #262626;
 }
 
 .textForm {
   font-weight: 500;
-font-size: 14px;
-line-height: 129%;
-letter-spacing: -0.02em;
-color: #262626;
-margin-top: 12px;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #262626;
+  margin-top: 12px;
+}
+
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.registerInput {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 12px 40px 12px 12px;
+  width: 295px;
+  height: 42px;
+  outline: none;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.registerInput:active,
+.registerInput:focus {
+  border: 1px solid #f6b83d;
+}
+
+.input {
+  position: relative;
+}
+
+.passwordToggleIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.error {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: #ef2447;
+  margin-left: 10px;
+}
+
+.errorInput {
+  border-color: red;
+}
+
+.button {
+  border-radius: 30px;
+  padding: 12px 99px;
+  width: 295px;
+  height: 42px;
+  background: #f6b83d;
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover,
+.button:active {
+  background-color: #f9b020;
+}
+
+.navigationText {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+  margin-top: 2px;
+}
+
+.navigationLink {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #f6b83d;
+  transition: color 0.3s ease;
+}
+
+.navigationLink:hover,
+.navigationLink:active {
+  color: #f9b020;
 }

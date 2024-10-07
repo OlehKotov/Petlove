@@ -6,6 +6,7 @@ const Main = () => {
   return (
     <div className={css.home}>
       <Header
+        isHeaderAuth="headerPosition"
         variant="home"
         width="15"
         height="13"
@@ -13,7 +14,7 @@ const Main = () => {
         burgerColor="#ffffff"
         closeColor="#000000"
         menuClass="menuWhite"
-        theme="white"
+        nav="white"
       />
       <main>
         <div className={css.blockWithText}>
@@ -25,6 +26,7 @@ const Main = () => {
             your life with immeasurable joy and tenderness.
           </p>
         </div>
+
         <div className={css.blockWithImg}></div>
       </main>
     </div>

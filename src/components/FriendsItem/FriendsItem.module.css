@@ -1,0 +1,72 @@
+.friendsItem {
+  border-radius: 15px;
+  width: 335px;
+  height: 184px;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  gap: 14px;
+  padding: 40px 36px 40px 20px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.04em;
+  color: #262626;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #262626;
+  margin-left: 4px;
+  display: inline-block;
+  max-width: 137px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 5px;
+}
+
+.workDays {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  border-radius: 30px;
+  padding: 8px;
+  height: 32px;
+  background-color: #fff4df;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  color: #f6b83d;
+}

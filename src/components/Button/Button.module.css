@@ -51,3 +51,23 @@
 .mobMenuRegistrationBtn:active {
   background-color: #fbe7c1;
 }
+
+.notFoundButton {
+  border-radius: 30px;
+  padding: 12px 30px;
+  width: 150px;
+  height: 42px;
+  background-color: #fff4df;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.notFoundButton:hover,
+.notFoundButton:active {
+  background-color: #fbe7c1;
+}

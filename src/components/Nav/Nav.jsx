@@ -3,14 +3,14 @@ import css from "./Nav.module.css";
 import clsx from "clsx";
 import { NavLink } from "react-router-dom";
 
-const Nav = ({ theme }) => {
+const Nav = ({ nav }) => {
   const linkActive = ({ isActive }) =>
     clsx(
       css.link,
-      isActive && (theme === "white" ? css.activeWhite : css.activeOrange)
+      isActive && (nav === "white" ? css.activeWhite : css.activeOrange)
     );
 
-  const linkClass = theme === "white" ? css.linkWhite : css.linkOrange;
+  const linkClass = nav === "white" ? css.linkWhite : css.linkOrange;
 
   return (
     <div className={css.nav}>

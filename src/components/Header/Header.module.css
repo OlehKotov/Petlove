@@ -1,22 +1,81 @@
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 295px;
-  height: 40px;
-  background-color: inherit;
-  margin: 0 auto;
+  padding-top: 20px;
+  background-color: #fff;
+  width: 335px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.headerPosition {
   position: absolute;
+  background-color: transparent;
   top: 18px;
-  left: 50%;
-  transform: translateX(-50%);
+  padding: 0 20px;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1440px;
+  /* position: relative; */
+}
+
+.burgerButton {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 218px;
+  height: 100vh;
+  background-color: #f6b83d;
+  border: none;
+  flex-direction: column;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding-bottom: 40px;
+}
+
+.menuWhite {
+  background-color: #fff;
+  stroke: #000000;
+}
+
+.menuOrange {
+  background-color: #f6b83d;
+  stroke: #ffffff;
+}
+
+.menuOpen {
+  display: flex;
+  align-items: center;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.headerAuth {
+  background-color: #F9F9F9;
 }

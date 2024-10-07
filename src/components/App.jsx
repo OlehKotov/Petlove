@@ -10,8 +10,11 @@ import NewsPage from "../pages/NewsPage/NewsPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import AddPetPage from "../pages/AddPetPage/AddPetPage";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import RestrictedRoute from "./RestrictedRoute/RestrictedRoute";
 
 function App() {
+
   return (
     <div>
       <Routes>
@@ -20,10 +23,10 @@ function App() {
         <Route path="/news" element={<NewsPage />} />
         <Route path="/notices" element={<NoticesPage />} />
         <Route path="/friends" element={<OurFriendsPage />} />
-        <Route path="/register" element={<RegistrationPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/add-pet" element={<AddPetPage />} />
+        <Route path="/register" element={<RestrictedRoute><RegistrationPage /></RestrictedRoute>} />
+        <Route path="/login" element={<RestrictedRoute><LoginPage /></RestrictedRoute>} />
+        <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
+        <Route path="/add-pet" element={<PrivateRoute><AddPetPage /></PrivateRoute>} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
