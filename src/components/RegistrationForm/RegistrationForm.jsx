@@ -41,7 +41,6 @@ const RegistrationForm = () => {
   const onSubmit = async ({ name, email, password }) => {
     await dispatch(register({ name, email, password }));
     reset();
-    // navigate('/profile');
   };
 
   return (

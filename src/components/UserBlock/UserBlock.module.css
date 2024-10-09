@@ -1,0 +1,112 @@
+.userBlock {
+  padding: 18px 20px 40px;
+}
+
+.userLabel {
+  border-radius: 30px;
+  padding: 10px 14px;
+  width: 80px;
+  height: 38px;
+  background-color: #f6b83d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.userText {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.userContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.userContainerImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.userContainerImgSvg {
+  border-radius: 100px;
+  padding: 10px;
+  width: 94px;
+  height: 94px;
+  background-color: #fff4df;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.userContainerImgBtn {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #262626;
+  cursor: pointer;
+}
+
+.userInfoHeader {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #2b2b2a;
+}
+
+.userInfoForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  box-sizing: border-box;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 12px 12px 12px 12px;
+  width: 295px;
+  height: 42px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+input::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.input.filled {
+  border-color: #f6b83d;
+}
+
+.input.empty {
+  border-color: rgba(38, 38, 38, 0.15);
+}
+
+.userContainerImgPhoto {
+  border-radius: 100px;
+  padding: 10px;
+  width: 94px;
+  height: 94px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}

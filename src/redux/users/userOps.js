@@ -57,11 +57,38 @@ export const logout = createAsyncThunk(
   }
 );
 
-export const currentUser = createAsyncThunk(
-  "user/current",
+export const currentUserFull = createAsyncThunk(
+  "user/currentFull",
   async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.user.user.token; 
+
     try {
-      const { data } = await instance.post("/users/current");
+      const { data } = await instance.get("/users/current/full", {
+        headers: {
+          Authorization: `Bearer ${token}`, 
+        },
+      });
+      return data;
+    } catch (e) {
+      console.error('Login error:', e.response.data);
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const editUser = createAsyncThunk(
+  "user/editUser",
+  async (userData, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.user.user.token; 
+
+    try {
+      const { data } = await instance.patch("/users/current/edit", userData, {
+        headers: {
+          Authorization: `Bearer ${token}`, 
+        },
+      });
       return data;
     } catch (e) {
       console.error('Login error:', e.response.data);

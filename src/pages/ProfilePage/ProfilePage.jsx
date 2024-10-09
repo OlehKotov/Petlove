@@ -1,9 +1,27 @@
 import React from 'react'
 import css from "./ProfilePage.module.css";
+import UserCard from '../../components/UserCard/UserCard';
+import Header from "../../components/Header/Header";
 
 const ProfilePage = () => {
   return (
-    <div>ProfilePage</div>
+    <div className={css.container}>
+    <Header
+      isHeaderAuth="headerAuth"
+      variant="auth"
+      width="17"
+      height="13"
+      icon="iconAuth"
+      burgerColor="#000000"
+      closeColor="#ffffff"
+      menuClass="menuOrange"
+      authNav="mobMenuLogInBtnOrange"
+    />
+    <div className={css.content}>
+    <UserCard />  
+  </div>
+  </div>
+    
   )
 }
 

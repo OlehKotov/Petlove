@@ -3,7 +3,7 @@ import css from "./LoginForm.module.css";
 import sprite from "../../assets/icons/sprite.svg";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { logInValidationschema } from "../../validation/logInValidationschema";
+import { logInValidationschema } from "../../validation/logInValidationShema";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import PetBlock from "../PetBlock/PetBlock";

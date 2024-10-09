@@ -1,11 +1,17 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { login, logout, currentUser, register } from "./userOps";
+import { login, logout, register, currentUserFull, editUser } from "./userOps";
 
 const initialState = {
   user: {
     name: null,
     email: null,
+    avatar: null,
+    phone: null,
     token: null,
+    noticesViewed: null,
+    noticesFavorites: null,
+    pets: null,
+    id: null,
   },
   isLoggedIn: false,
   isLoading: false,
@@ -31,11 +37,25 @@ const userSlice = createSlice({
         state.user.email = action.payload.email;
         state.user.token = action.payload.token;
       })
-      .addCase(currentUser.fulfilled, (state, action) => {
+      .addCase(currentUserFull.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isLoggedIn = true;
         state.user.name = action.payload.name;
         state.user.email = action.payload.email;
+        state.user.avatar = action.payload.avatar;
+        state.user.phone = action.payload.phone;
+        state.user.noticesViewed = action.payload.noticesViewed;
+        state.user.noticesFavorites = action.payload.noticesFavorites;
+        state.user.pets = action.payload.pets;
+        state.user.id = action.payload._id;
+      })
+      .addCase(editUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isLoggedIn = true;
+        state.user.name = action.payload.name;
+        state.user.email = action.payload.email;
+        state.user.avatar = action.payload.avatar;
+        state.user.phone = action.payload.phone;
       })
       .addCase(logout.fulfilled, () => {
         return initialState;
@@ -44,8 +64,9 @@ const userSlice = createSlice({
         isAnyOf(
           register.pending,
           login.pending,
-          currentUser.pending,
-          logout.pending
+          currentUserFull.pending,
+          logout.pending,
+          editUser.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -56,8 +77,9 @@ const userSlice = createSlice({
         isAnyOf(
           register.rejected,
           login.rejected,
-          currentUser.rejected,
-          logout.rejected
+          currentUserFull.rejected,
+          logout.rejected,
+          editUser.rejected
         ),
         (state) => {
           state.isLoading = false;
