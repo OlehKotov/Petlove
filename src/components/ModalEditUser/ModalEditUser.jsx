@@ -12,7 +12,7 @@ import {
 import { useForm } from "react-hook-form";
 import { editUser } from "../../redux/users/userOps";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { EditUserValidationschema } from "../../validation/editUserValidationShema";
+import { editUserValidationschema } from "../../validation/editUserValidationShema";
 
 const ModalEditUser = ({ isOpen, onRequestClose, isLoading, isError }) => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const ModalEditUser = ({ isOpen, onRequestClose, isLoading, isError }) => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(EditUserValidationschema),
+    resolver: yupResolver(editUserValidationschema),
     defaultValues: {
       name: name || "",
       email: email || "",
@@ -82,9 +82,7 @@ const ModalEditUser = ({ isOpen, onRequestClose, isLoading, isError }) => {
                 {...register("avatar")}
                 placeholder={avatar ? avatar : "https://"}
               />
-              {errors.avatar && (
-                <p className={css.error}>{errors.avatar.message}</p>
-              )}
+
               <div className={css.inputFileBtn}>
                 <input
                   type="file"
@@ -102,6 +100,9 @@ const ModalEditUser = ({ isOpen, onRequestClose, isLoading, isError }) => {
                   </svg>
                 </label>
               </div>
+              {errors.avatar && (
+                <p className={css.error}>{errors.avatar.message}</p>
+              )}
             </div>
 
             <div className={css.formGroup}>

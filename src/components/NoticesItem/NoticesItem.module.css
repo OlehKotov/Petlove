@@ -1,0 +1,22 @@
+.noticeItem {
+  border-radius: 16px;
+  padding: 32px;
+  width: 335px;
+  height: 430px;
+  background-color: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.noticeItemImg {
+  border-radius: 16px;
+  width: 287px;
+  height: 178px;
+}
+
+.petItemHeaderContainer {
+    display: flex;
+    justify-content: space-between;
+}

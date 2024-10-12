@@ -4,7 +4,7 @@ import css from "./LogOutBtn.module.css";
 import { logout } from "../../redux/users/userOps";
 import ModalApproveAction from "../ModalApproveAction/ModalApproveAction";
 
-const LogOutBtn = () => {
+const LogOutBtn = ({className = ""}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const isLoading = useSelector((state) => state.user.isLoading);
   const isError = useSelector((state) => state.user.isError);
@@ -32,7 +32,8 @@ const LogOutBtn = () => {
 
   return (
     <>
-      <button onClick={handleOpenModal} className={css.logoutButton}>
+    {console.log(`${css.logoutButton} ${className}`)}
+      <button onClick={handleOpenModal} className={`${css.logoutButton} ${css[className]}`}>
         Log Out
       </button>
       <ModalApproveAction

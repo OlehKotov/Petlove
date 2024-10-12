@@ -22,3 +22,11 @@ export const selectToken = (state) => state.user.user.token;
 export const selectIsLoggedIn = (state) => state.user.isLoggedIn;
 export const selectIsLoading = (state) => state.user.isLoading;
 export const selectIsError = (state) => state.user.isError;
+
+
+export const selectUserPetsName = (state) => state.user.user.pets.name;
+export const selectUserPetsTitle = (state) => state.user.user.pets.title;
+export const selectUserPetsImgURL = (state) => state.user.user.pets.imgURL;
+export const selectUserPetsSpecies = (state) => state.user.user.pets.species;
+export const selectUserPetsBirthday = (state) => state.user.user.pets.birthday;
+export const selectUserPetsSex = (state) => state.user.user.pets.sex;

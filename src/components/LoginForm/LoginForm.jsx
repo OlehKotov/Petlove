@@ -41,7 +41,7 @@ const LoginForm = () => {
 
   return (
     <div className={css.containerForm}>
-      <PetBlock src={dogImage} alt={"dog"}/>
+      <PetBlock src={dogImage} alt="dog" className="image"/>
       <div className={css.registerForm}>
         <h1 className={css.headerForm}>Log in</h1>
         <p className={css.textForm}>

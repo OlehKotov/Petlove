@@ -136,10 +136,15 @@ input::placeholder {
   color: #262626;
 }
 
+.formGroup {
+  position: relative;
+}
+
 .formGroupImg {
   display: flex;
   gap: 8px;
   align-items: center;
+  position: relative;
 }
 
 .inputFileBtn label {
@@ -155,4 +160,16 @@ input::placeholder {
   width: 80px;
   height: 80px;
   margin: 0 auto;
+}
+
+.error {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: #ef2447;
+  margin-left: 10px;
+  position: absolute;
+  top: 41px;
+  left: 0;
 }

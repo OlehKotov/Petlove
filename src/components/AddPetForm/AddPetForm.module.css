@@ -1,0 +1,285 @@
+.addPetFormContainer {
+  border-radius: 30px;
+  width: 335px;
+  height: 489px;
+  background: #fff;
+  padding: 28px 20px 20px 20px;
+}
+
+.addPetFormHeader {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.addPetFormHeader span {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  color: rgba(43, 43, 42, 0.4);
+  margin-left: 8px;
+}
+
+.addPetForm {
+  margin-top: 24px;
+}
+
+.formGroupGenderRadioButtons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+}
+
+.genderOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.genderOption input {
+  display: none;
+}
+
+.genderOption .icon {
+  fill: currentColor;
+}
+
+.genderError {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: #ef2447;
+  margin-left: 10px;
+  position: absolute;
+  top: 35px;
+  left: 0;
+}
+
+.error {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: #ef2447;
+  margin-left: 10px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+}
+
+.userContainerImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.userContainerImgSvg {
+  background-color: #fff4df;
+  border-radius: 100px;
+  padding: 10px;
+  width: 68px;
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.petInfoForm {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formGroup {
+  position: relative;
+}
+
+.formGroupImg {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+}
+
+.inputFile {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 13px 39px 13px 12px;
+  width: 161px;
+  height: 42px;
+}
+
+.inputFile:focus {
+  outline: none;
+  border-color: #f6b83d;
+}
+
+.inputFileBtn {
+  border-radius: 30px;
+  padding: 12px;
+  width: 126px;
+  height: 42px;
+  background: #fff4df;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  color: #262626;
+}
+
+.inputFileBtn label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.input {
+  box-sizing: border-box;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 12px 12px 12px 12px;
+  width: 295px;
+  height: 42px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+.input:focus {
+  outline: none;
+  border-color: #f6b83d;
+}
+
+input::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.formGroupDateSpec {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.inputDate {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 12px 58px 12px 12px;
+  width: 144px;
+  height: 42px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.inputDate:focus {
+  outline: none;
+  border-color: #f6b83d;
+}
+
+.iconCalendar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  pointer-events: none;
+}
+
+.formBtns {
+  margin-top: 31px;
+  display: flex;
+  gap: 8px;
+  justify-content: end;
+}
+
+.formSubmitBtn {
+  border-radius: 30px;
+  padding: 12px 26px;
+  width: 100px;
+  height: 42px;
+  background: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.formSubmitBtn:hover,
+.formSubmitBtn:active {
+  background-color: #f9b020;
+}
+
+.selectContainer {
+  position: relative;
+}
+
+.select {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 8px 12px 8px 12px;
+  width: 143px;
+  height: 42px;
+  appearance: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.6);
+}
+
+.select:focus {
+  outline: none;
+  border-color: #f6b83d;
+}
+
+.label {
+  margin-bottom: 8px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.select option {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.6);
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 30px;
+}
+
+.select::-ms-expand {
+  display: none;
+}
+
+.input.filled,
+.inputDate.filled,
+.inputFile.filled,
+.select.filled {
+  border-color: #f6b83d;
+}

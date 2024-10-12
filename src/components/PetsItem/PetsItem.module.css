@@ -1,0 +1,78 @@
+.petItem {
+  border: 1px solid rgba(38, 38, 38, 0.1);
+  border-radius: 20px;
+  width: 295px;
+  height: 132px;
+  display: flex;
+  gap: 14px;
+  position: relative;
+  padding: 16px;
+}
+
+.petItemImg {
+  border-radius: 100px;
+  width: 66px;
+  height: 66px;
+}
+
+.petItemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.petItemHeader {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  color: #2b2b2a;
+}
+
+.petItemInfoContainer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 173px;
+}
+
+.petItemInfoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.petItemInfoItemHeader {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.petItemInfoItemText {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  color: #262626;
+}
+
+.petItemTrashButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border-radius: 30px;
+  padding: 7px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff4df;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.petItemTrashButton:hover,
+.petItemTrashButton:active {
+  background-color: #fbe7c1;
+}

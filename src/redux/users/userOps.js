@@ -97,6 +97,47 @@ export const editUser = createAsyncThunk(
   }
 );
 
+export const addPet = createAsyncThunk(
+  "user/addPets",
+  async (userData, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.user.user.token; 
+
+    try {
+      const response = await instance.post("/users/current/pets/add", userData, {
+        headers: {
+          Authorization: `Bearer ${token}`, 
+        },
+      });
+      return response.data;
+    } catch (e) {
+      console.error('Login error:', e.response.data);
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const deletePet = createAsyncThunk(
+  "user/deletePets",
+  async (id, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.user.user.token; 
+
+    try {
+      const response = await instance.delete(`/users/current/pets/remove/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`, 
+        },
+      });
+      return { _id: id };
+    } catch (e) {
+      console.error('Login error:', e.response.data);
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+
 
 
 

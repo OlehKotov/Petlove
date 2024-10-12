@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { login, logout, register, currentUserFull, editUser } from "./userOps";
+import { login, logout, register, currentUserFull, editUser, addPet, deletePet } from "./userOps";
 
 const initialState = {
   user: {
@@ -10,7 +10,7 @@ const initialState = {
     token: null,
     noticesViewed: null,
     noticesFavorites: null,
-    pets: null,
+    pets: [],
     id: null,
   },
   isLoggedIn: false,
@@ -57,6 +57,16 @@ const userSlice = createSlice({
         state.user.avatar = action.payload.avatar;
         state.user.phone = action.payload.phone;
       })
+      .addCase(addPet.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user = action.payload;
+      })
+      .addCase(deletePet.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user.pets = state.user.pets.filter(
+          (pet) => pet._id !== action.payload._id
+        );
+      })
       .addCase(logout.fulfilled, () => {
         return initialState;
       })
@@ -66,7 +76,9 @@ const userSlice = createSlice({
           login.pending,
           currentUserFull.pending,
           logout.pending,
-          editUser.pending
+          editUser.pending,
+          addPet.pending,
+          deletePet.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -79,7 +91,9 @@ const userSlice = createSlice({
           login.rejected,
           currentUserFull.rejected,
           logout.rejected,
-          editUser.rejected
+          editUser.rejected,
+          addPet.rejected,
+          deletePet.rejected
         ),
         (state) => {
           state.isLoading = false;
