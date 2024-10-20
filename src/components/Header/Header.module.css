@@ -79,3 +79,8 @@
 .headerAuth {
   background-color: #F9F9F9;
 }
+
+.burgerWrap {
+  display: flex;
+  gap: 12px;
+}

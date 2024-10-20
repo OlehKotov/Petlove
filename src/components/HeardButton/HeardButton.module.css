@@ -1,0 +1,18 @@
+.noticeFavorite {
+    border-radius: 30px;
+    padding: 14px;
+    width: 46px;
+    height: 46px;
+    background-color: #fff4df;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .noticeFavorite:hover,
+  .noticeFavorite:active,
+  .noticeFavoriteActive {
+    background-color: #fbe7c1
+  }

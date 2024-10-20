@@ -1,0 +1,130 @@
+.filters {
+  border-radius: 30px;
+  width: 335px;
+  height: 378px;
+  background-color: #fff4df;
+  margin-top: 40px;
+  padding: 20px;
+}
+.filtersCatandSex {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.inputWrap {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.iconX {
+  position: absolute;
+  top: 50%;
+  right: 34px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.speciesOptions {
+  margin-top: 12px;
+  width: 295px;
+}
+
+.testSelect__control {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 0;
+  background-color: transparent;
+  min-height: 42px;
+  box-shadow: none;
+  transition: border-color 0.3s ease;
+}
+
+.testSelect__control--is-focused {
+  border: 1px solid #f6b83d;
+}
+
+.testSelect__placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.testSelect__menu {
+  border-radius: 0 0 30px 30px;
+}
+
+.testSelect__option {
+  padding: 12px;
+}
+
+.testSelect__option--is-focused {
+  background-color: #f6b83d;
+  color: white;
+}
+
+.line {
+  margin-top: 20px;
+}
+
+.sortFilters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  
+  .sortFiltersLabel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: -0.03em;
+    color: #262626;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  .sortFiltersLabel span {
+    display: none;
+  }
+  
+  input[type="radio"]:checked + .sortFiltersLabel {
+    background-color: #f6b83d; 
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  input[type="radio"]:checked + .sortFiltersLabel span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  input[type="radio"]:checked + .sortFiltersLabel svg {
+    stroke: #fff;
+  }
+  

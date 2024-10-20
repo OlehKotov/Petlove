@@ -47,7 +47,7 @@ const NewsList = () => {
   };
 
   return (
-    <div>
+    <div className={css.newsListWrap}>
       <SearchField onSearch={handleSearch} />
       <ul className={css.newsList}>
         {news.map((newsItem) => (

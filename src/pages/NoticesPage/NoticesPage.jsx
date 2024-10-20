@@ -1,7 +1,9 @@
-import React from 'react'
+import React from "react";
 import css from "./NoticesPage.module.css";
-import Title from '../../components/Title/Title';
-import Header from '../../components/Header/Header';
+import Title from "../../components/Title/Title";
+import Header from "../../components/Header/Header";
+import NoticesList from "../../components/NoticesList/NoticesList";
+import NoticesFilters from "../../components/NoticesFilters/NoticesFilters";
 
 const NoticesPage = () => {
   return (
@@ -19,9 +21,11 @@ const NoticesPage = () => {
       />
       <div className={css.content}>
         <Title>Find your favorite pet</Title>
+        <NoticesFilters />
+        <NoticesList />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NoticesPage
+export default NoticesPage;

@@ -1,4 +1,4 @@
-// import { createSelector } from "@reduxjs/toolkit";
+
 
 export const selectNews = (state) => state.news.items;
 export const selectNewsLoading = (state) => state.news.loading;
@@ -13,7 +13,7 @@ export const selectUserName = (state) => state.user.user.name;
 export const selectUserEmail = (state) => state.user.user.email;
 export const selectUserAvatar = (state) => state.user.user.avatar;
 export const selectUserPhone = (state) => state.user.user.phone;
-export const selectUserNoticesViewed = (state) => state.user.user.noticesViewed;
+
 export const selectUserNoticesFavorites = (state) => state.user.user.noticesFavorites;
 export const selectUserPets = (state) => state.user.user.pets;
 export const selectUserId = (state) => state.user.user._id;
@@ -30,3 +30,9 @@ export const selectUserPetsImgURL = (state) => state.user.user.pets.imgURL;
 export const selectUserPetsSpecies = (state) => state.user.user.pets.species;
 export const selectUserPetsBirthday = (state) => state.user.user.pets.birthday;
 export const selectUserPetsSex = (state) => state.user.user.pets.sex;
+
+
+export const selectNotices = (state) => state.notices;
+export const selectNoticesItems = (state) => state.notices.items;
+export const selectNoticesTotalPages = (state) => state.notices.totalPages;
+export const selectFilters = (state) => state.notices.filters;

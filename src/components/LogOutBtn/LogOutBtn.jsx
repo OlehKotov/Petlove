@@ -32,7 +32,6 @@ const LogOutBtn = ({className = ""}) => {
 
   return (
     <>
-    {console.log(`${css.logoutButton} ${className}`)}
       <button onClick={handleOpenModal} className={`${css.logoutButton} ${css[className]}`}>
         Log Out
       </button>

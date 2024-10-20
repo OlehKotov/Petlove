@@ -12,6 +12,8 @@ import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import AddPetPage from "../pages/AddPetPage/AddPetPage";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import RestrictedRoute from "./RestrictedRoute/RestrictedRoute";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 
@@ -29,6 +31,7 @@ function App() {
         <Route path="/add-pet" element={<PrivateRoute><AddPetPage /></PrivateRoute>} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <ToastContainer autoClose={1500} />
     </div>
   );
 }

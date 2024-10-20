@@ -1,10 +1,9 @@
 .noticeItem {
   border-radius: 16px;
-  padding: 32px;
+  padding: 24px;
   width: 335px;
   height: 430px;
   background-color: #fff;
-  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -16,7 +15,103 @@
   height: 178px;
 }
 
-.petItemHeaderContainer {
-    display: flex;
-    justify-content: space-between;
+.noticeItemHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.noticeItemHeader {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #2b2b2a;
+}
+
+.noticeItemPopularity {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: #2b2b2a;
+}
+
+.noticeItemContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.noticeItemInfoContainer {
+  display: flex;
+  gap: 14px;
+}
+
+.noticeItemInfoItemHeader {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.noticeItemInfoItemText {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  color: #262626;
+}
+
+.noticeItemInfoComment {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #2b2b2a;
+  margin-top: 16px;
+}
+
+.noticeItemButtonStar {
+  display: flex;
+  gap: 10px;
+}
+
+.noticeButton {
+  border-radius: 30px;
+  padding: 14px 80px;
+  width: 231px;
+  height: 46px;
+  background-color: #f6b83d;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.noticeButton:hover,
+.noticeButton:active {
+  background-color: #f9b020;
+}
+
+.noticeFavorite {
+  border-radius: 30px;
+  padding: 14px;
+  width: 46px;
+  height: 46px;
+  background-color: #fff4df;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.noticeFavorite:hover,
+.noticeFavorite:active,
+.noticeFavoriteActive {
+  background-color: #fbe7c1
 }

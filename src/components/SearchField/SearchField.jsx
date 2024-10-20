@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import sprite from "../../assets/icons/sprite.svg";
 import css from "./SearchField.module.css";
+import clsx from "clsx";
 
-const SearchField = ({ onSearch }) => {
+const SearchField = ({ onSearch, variant }) => {
   const [query, setQuery] = useState("");
 
   const handleInputChange = (event) => {
@@ -29,7 +30,7 @@ const SearchField = ({ onSearch }) => {
           value={query}
           onChange={handleInputChange}
           placeholder="Search"
-          className={css.searchInput}
+          className={clsx(css.searchInput, css[variant])}
         />
         <button type="submit" className={css.searchButton}>
           <svg width="18" height="18">

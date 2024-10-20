@@ -1,5 +1,15 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { login, logout, register, currentUserFull, editUser, addPet, deletePet } from "./userOps";
+import {
+  login,
+  logout,
+  register,
+  currentUserFull,
+  editUser,
+  addPet,
+  deletePet,
+  addFavoriteNotice,
+  deleteFavoriteNotice,
+} from "./userOps";
 
 const initialState = {
   user: {
@@ -8,8 +18,8 @@ const initialState = {
     avatar: null,
     phone: null,
     token: null,
-    noticesViewed: null,
-    noticesFavorites: null,
+    noticesViewed: [],
+    noticesFavorites: [],
     pets: [],
     id: null,
   },
@@ -20,7 +30,7 @@ const initialState = {
 
 const userSlice = createSlice({
   name: "user",
-  initialState: initialState,
+  initialState,
   extraReducers: (builder) => {
     builder
       .addCase(register.fulfilled, (state, action) => {
@@ -67,6 +77,18 @@ const userSlice = createSlice({
           (pet) => pet._id !== action.payload._id
         );
       })
+      .addCase(addFavoriteNotice.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user.noticesFavorites = action.payload;
+        // state.user.noticesFavorites.push(action.payload);
+      })
+      .addCase(deleteFavoriteNotice.fulfilled, (state, action) => {
+        state.isLoading = false;
+        // state.user.noticesFavorites = action.payload;
+        state.user.noticesFavorites = state.user.noticesFavorites.filter(
+          (favNotice) => favNotice._id !== action.payload._id
+        );
+      })
       .addCase(logout.fulfilled, () => {
         return initialState;
       })
@@ -78,7 +100,9 @@ const userSlice = createSlice({
           logout.pending,
           editUser.pending,
           addPet.pending,
-          deletePet.pending
+          deletePet.pending,
+          addFavoriteNotice.pending,
+          deleteFavoriteNotice.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -93,7 +117,9 @@ const userSlice = createSlice({
           logout.rejected,
           editUser.rejected,
           addPet.rejected,
-          deletePet.rejected
+          deletePet.rejected,
+          addFavoriteNotice.rejected,
+          deleteFavoriteNotice.rejected
         ),
         (state) => {
           state.isLoading = false;
@@ -102,6 +128,5 @@ const userSlice = createSlice({
       );
   },
 });
-
 
 export default userSlice.reducer;

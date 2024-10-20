@@ -1,0 +1,15 @@
+.userContainerImgPhoto {
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+}
+
+.userContainerImgSvg {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #fff4df;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

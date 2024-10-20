@@ -4,6 +4,13 @@ import Nav from "../Nav/Nav";
 import AuthNav from "../AuthNav/AuthNav";
 import sprite from "../../assets/icons/sprite.svg";
 import { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectIsLoggedIn,
+  selectToken,
+  selectUserAvatar,
+} from "../../redux/selectors";
+import UserBar from "../UserBar/UserBar";
 
 const Header = ({
   isHeaderAuth = "",
@@ -19,6 +26,11 @@ const Header = ({
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
+
+  const dispatch = useDispatch();
+  const avatar = useSelector(selectUserAvatar);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const token = useSelector(selectToken);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -41,12 +53,15 @@ const Header = ({
     <header className={`${css.header} ${css[isHeaderAuth]}`}>
       <div className={css.container}>
         <Logo variant={variant} width={width} height={height} icon={icon} />
+        <div className={css.burgerWrap}>
+          {isLoggedIn && token ? <UserBar /> : null}
 
-        <button className={css.burgerButton} onClick={toggleMenu}>
-          <svg width="32" height="32" style={{ stroke: burgerColor }}>
-            <use xlinkHref={`${sprite}#burger`} />
-          </svg>
-        </button>
+          <button className={css.burgerButton} onClick={toggleMenu}>
+            <svg width="32" height="32" style={{ stroke: burgerColor }}>
+              <use xlinkHref={`${sprite}#burger`} />
+            </svg>
+          </button>
+        </div>
 
         <div
           className={`${css.menu} ${isMenuOpen ? css.menuOpen : ""} ${

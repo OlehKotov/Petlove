@@ -138,6 +138,69 @@ export const deletePet = createAsyncThunk(
 );
 
 
+export const addFavoriteNotice = createAsyncThunk(
+  "user/addFavoriteNotice",
+  async (_id, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.user.user.token;
+    const favorites = state.user.user.noticesFavorites; 
+
+    // if (favorites.includes(_id)) {
+    //   return thunkAPI.rejectWithValue({ message: "This notice is already in favorites" });
+    // }
+
+    if (favorites.some((notice) => notice._id === _id)) {
+      return thunkAPI.rejectWithValue({ message: "This notice is already in favorites" });
+    }
+
+    try {
+      const response = await instance.post(
+        `/notices/favorites/add/${_id}`,
+        {}, 
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log('Add favorite response:', response.data);
+      return response.data;
+    } catch (error) {
+      console.error('Error adding favorite notice:', error);
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const deleteFavoriteNotice = createAsyncThunk(
+  "user/deleteFavoriteNotice",
+  async (_id, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.user.user.token;
+    // const favorites = state.user.user.noticesFavorites; 
+
+    // if (!favorites.includes(_id)) {
+    //   return thunkAPI.rejectWithValue({ message: "This notice is not in favorites" });
+    // }
+
+    try {
+      const response = await instance.delete(
+        `/notices/favorites/remove/${_id}`, 
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log('Delete favorite response:', response.data); 
+      // return { _id };
+      return response.data;
+    } catch (error) {
+      console.error('Error deleting favorite notice:', error);
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
 
 
 

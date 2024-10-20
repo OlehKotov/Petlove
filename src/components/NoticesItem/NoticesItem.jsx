@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./NoticesItem.module.css";
 import sprite from "../../assets/icons/sprite.svg";
+import HeardButton from "../HeardButton/HeardButton";
 
 const NoticesItem = ({ notice }) => {
   return (
@@ -12,15 +13,10 @@ const NoticesItem = ({ notice }) => {
       />
 
       <div className={css.noticeItemContent}>
-
         <div className={css.noticeItemHeaderContainer}>
           <h2 className={css.noticeItemHeader}>{notice.title}</h2>
           <div className={css.noticeItemPopularity}>
-            <svg
-              className={css.noticeItemPopularityIcon}
-              width="16"
-              height="16"
-            >
+            <svg width="16" height="16">
               <use xlinkHref={`${sprite}#star`} />
             </svg>
             {notice.popularity}
@@ -28,7 +24,6 @@ const NoticesItem = ({ notice }) => {
         </div>
 
         <div className={css.noticeItemContainer}>
-
           <div className={css.noticeItemInfoContainer}>
             <div className={css.noticeItemInfoItem}>
               <h3 className={css.noticeItemInfoItemHeader}>Name</h3>
@@ -51,27 +46,14 @@ const NoticesItem = ({ notice }) => {
               <p className={css.noticeItemInfoItemText}>{notice.category}</p>
             </div>
           </div>
-<p className={css.noticeItemInfoComment}>{notice.comment}</p>
+          <p className={css.noticeItemInfoComment}>{notice.comment}</p>
         </div>
-
       </div>
 
       <div className={css.noticeItemButtonStar}>
-        <button
-        className={css.noticeButton}
-      >Learn more
-      </button>
-      <div className={css.noticeFavorite}>
-      <svg
-              className={css.noticeItemPopularityIcon}
-              width="16"
-              height="16"
-            >
-              <use xlinkHref={`${sprite}#heart`} />
-            </svg>
+        <button className={css.noticeButton}>Learn more</button>
+        <HeardButton noticeId={notice._id} />
       </div>
-      </div>
-      
     </li>
   );
 };
