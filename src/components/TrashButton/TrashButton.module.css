@@ -12,7 +12,6 @@
 }
 
 .noticeFavorite:hover,
-.noticeFavorite:active,
-.noticeFavoriteActive {
+.noticeFavorite:active {
   background-color: #fbe7c1;
 }

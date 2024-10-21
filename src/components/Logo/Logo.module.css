@@ -17,7 +17,7 @@
   font-size: 50px;
   color: #fff;
   opacity: 0;
-  animation: fadeIn 1.5s forwards; 
+  animation: fadeIn 1.5s forwards;
 }
 
 .logo.home {
@@ -31,9 +31,9 @@
 }
 
 .iconMain {
-    margin-left: 4.4px;
-    margin-right: 4.4px;
-    fill: #f6b83d;
+  margin-left: 4.4px;
+  margin-right: 4.4px;
+  fill: #f6b83d;
 }
 
 .iconHome {
@@ -47,5 +47,3 @@
   margin-right: 1.7px;
   fill: #f6b83d;
 }
-
-

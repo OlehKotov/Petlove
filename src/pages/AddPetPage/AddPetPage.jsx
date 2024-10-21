@@ -19,9 +19,9 @@ const AddPetPage = () => {
         menuClass="menuOrange"
         authNav="mobMenuLogInBtnOrange"
       />
-      <PetBlock src={dog} alt="dog" className="addPetImg"/>
+      <PetBlock src={dog} alt="dog" className="addPetImg" />
       <AddPetForm />
-      </div>
+    </div>
   );
 };
 

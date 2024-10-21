@@ -9,6 +9,7 @@ import {
   deletePet,
   addFavoriteNotice,
   deleteFavoriteNotice,
+  addNoticeToViewed,
 } from "./userOps";
 
 const initialState = {
@@ -80,14 +81,14 @@ const userSlice = createSlice({
       .addCase(addFavoriteNotice.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user.noticesFavorites = action.payload;
-        // state.user.noticesFavorites.push(action.payload);
       })
       .addCase(deleteFavoriteNotice.fulfilled, (state, action) => {
         state.isLoading = false;
-        // state.user.noticesFavorites = action.payload;
-        state.user.noticesFavorites = state.user.noticesFavorites.filter(
-          (favNotice) => favNotice._id !== action.payload._id
-        );
+        state.user.noticesFavorites = action.payload;
+      })
+      .addCase(addNoticeToViewed.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user.noticesViewed = action.payload;
       })
       .addCase(logout.fulfilled, () => {
         return initialState;
@@ -102,7 +103,8 @@ const userSlice = createSlice({
           addPet.pending,
           deletePet.pending,
           addFavoriteNotice.pending,
-          deleteFavoriteNotice.pending
+          deleteFavoriteNotice.pending,
+          addNoticeToViewed.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -119,7 +121,8 @@ const userSlice = createSlice({
           addPet.rejected,
           deletePet.rejected,
           addFavoriteNotice.rejected,
-          deleteFavoriteNotice.rejected
+          deleteFavoriteNotice.rejected,
+          addNoticeToViewed.rejected
         ),
         (state) => {
           state.isLoading = false;

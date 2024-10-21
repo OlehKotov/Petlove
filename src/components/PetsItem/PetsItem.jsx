@@ -44,9 +44,12 @@ const PetsItem = ({ pet }) => {
           </div>
         </div>
       </div>
-      <button onClick={() => {
+      <button
+        onClick={() => {
           onDeletePet(pet._id);
-        }} className={css.petItemTrashButton}>
+        }}
+        className={css.petItemTrashButton}
+      >
         <svg className={css.icon} width="16" height="16">
           <use xlinkHref={`${sprite}#trash`} />
         </svg>

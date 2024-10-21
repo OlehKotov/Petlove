@@ -15,6 +15,7 @@ export const selectUserAvatar = (state) => state.user.user.avatar;
 export const selectUserPhone = (state) => state.user.user.phone;
 
 export const selectUserNoticesFavorites = (state) => state.user.user.noticesFavorites;
+export const selectUserNoticesViewed = (state) => state.user.user.noticesViewed;
 export const selectUserPets = (state) => state.user.user.pets;
 export const selectUserId = (state) => state.user.user._id;
 

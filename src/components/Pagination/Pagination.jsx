@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import css from "./Pagination.module.css";
 import sprite from "../../assets/icons/sprite.svg";
 
@@ -47,7 +47,11 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
   return (
     <div className={css.pagination}>
-      <button onClick={handleFirstPage} disabled={currentPage === 1} className={css.pageButton}>
+      <button
+        onClick={handleFirstPage}
+        disabled={currentPage === 1}
+        className={css.pageButton}
+      >
         <svg width="7" height="12">
           <use xlinkHref={`${sprite}#Vector_black_left`} />
         </svg>
@@ -55,7 +59,11 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
           <use xlinkHref={`${sprite}#Vector_black_left`} />
         </svg>
       </button>
-      <button onClick={handlePreviousPage} disabled={currentPage === 1} className={css.pageButton}>
+      <button
+        onClick={handlePreviousPage}
+        disabled={currentPage === 1}
+        className={css.pageButton}
+      >
         <svg width="7" height="12">
           <use xlinkHref={`${sprite}#Vector_black_left`} />
         </svg>
@@ -64,7 +72,9 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         <button
           key={page}
           onClick={() => handlePageChange(page)}
-          className={`${css.pageButton} ${currentPage === page ? css.active : ''}`}
+          className={`${css.pageButton} ${
+            currentPage === page ? css.active : ""
+          }`}
         >
           {page}
         </button>
@@ -74,12 +84,20 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
           <span className={css.dots}>...</span>
         </>
       )}
-      <button onClick={handleNextPage} disabled={currentPage === totalPages} className={css.pageButton}>
+      <button
+        onClick={handleNextPage}
+        disabled={currentPage === totalPages}
+        className={css.pageButton}
+      >
         <svg width="7" height="12">
           <use xlinkHref={`${sprite}#Vector_black_right`} />
         </svg>
       </button>
-      <button onClick={handleLastPage} disabled={currentPage === totalPages} className={css.pageButton}>
+      <button
+        onClick={handleLastPage}
+        disabled={currentPage === totalPages}
+        className={css.pageButton}
+      >
         <svg width="7" height="12">
           <use xlinkHref={`${sprite}#Vector_black_right`} />
         </svg>
@@ -92,4 +110,3 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 };
 
 export default Pagination;
-   

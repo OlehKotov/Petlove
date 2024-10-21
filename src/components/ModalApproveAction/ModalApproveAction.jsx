@@ -23,7 +23,7 @@ const ModalApproveAction = ({
     <BaseModal isOpen={isOpen} onRequestClose={onRequestClose}>
       <div className={css.modalContent}>
         <button className={css.closeButton} onClick={handleCancel}>
-          <svg width="24" height="24" style={{ stroke: '#000000' }}>
+          <svg width="24" height="24" style={{ stroke: "#000000" }}>
             <use xlinkHref={`${sprite}#x`} />
           </svg>
         </button>

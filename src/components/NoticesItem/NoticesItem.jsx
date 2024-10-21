@@ -2,8 +2,25 @@ import React from "react";
 import css from "./NoticesItem.module.css";
 import sprite from "../../assets/icons/sprite.svg";
 import HeardButton from "../HeardButton/HeardButton";
+import TrashButton from "../TrashButton/TrashButton";
+import { useDispatch, useSelector } from "react-redux";
+import { addNoticeToViewed } from "../../redux/users/userOps";
+import { selectUserNoticesViewed } from "../../redux/selectors";
 
-const NoticesItem = ({ notice }) => {
+const NoticesItem = ({ notice, favorite }) => {
+  const dispatch = useDispatch();
+
+  const viewed = useSelector(selectUserNoticesViewed);
+
+  const handleLearnMore = () => {
+    const isViewed = viewed.some(
+      (viewedNotice) => viewedNotice._id === notice._id
+    );
+    if (!isViewed) {
+      dispatch(addNoticeToViewed(notice));
+    }
+  };
+
   return (
     <li className={css.noticeItem}>
       <img
@@ -11,7 +28,6 @@ const NoticesItem = ({ notice }) => {
         alt="Animal foto"
         className={css.noticeItemImg}
       />
-
       <div className={css.noticeItemContent}>
         <div className={css.noticeItemHeaderContainer}>
           <h2 className={css.noticeItemHeader}>{notice.title}</h2>
@@ -51,8 +67,14 @@ const NoticesItem = ({ notice }) => {
       </div>
 
       <div className={css.noticeItemButtonStar}>
-        <button className={css.noticeButton}>Learn more</button>
-        <HeardButton noticeId={notice._id} />
+        <button className={css.noticeButton} onClick={handleLearnMore}>
+          Learn more
+        </button>
+        {favorite ? (
+          <TrashButton noticeId={notice._id} />
+        ) : (
+          <HeardButton noticeId={notice._id} />
+        )}
       </div>
     </li>
   );

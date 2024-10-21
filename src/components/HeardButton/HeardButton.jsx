@@ -10,15 +10,12 @@ import {
   deleteFavoriteNotice,
 } from "../../redux/users/userOps";
 
-const HeardButton = ({noticeId}) => {
+const HeardButton = ({ noticeId }) => {
   const dispatch = useDispatch();
   const favoriteNotice = useSelector(selectUserNoticesFavorites);
   const { isAuth } = useAuth();
-  //   const [isHovered, setIsHovered] = useState(false);
 
-  const isFavorite = favoriteNotice.some(
-    (favNotice) => favNotice._id === noticeId
-  );
+  const isFavorite = favoriteNotice.includes(noticeId);
 
   const [isClicked, setIsClicked] = useState(isFavorite);
 
@@ -47,7 +44,6 @@ const HeardButton = ({noticeId}) => {
       toast.error("Please Log in and try again.");
       return;
     }
-    // setIsClicked(!isClicked);
     handleClick();
   };
 

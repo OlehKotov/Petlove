@@ -87,15 +87,6 @@ const NoticesFilters = () => {
     useSelector(selectNotices);
   const [selectedLocation, setSelectedLocation] = useState(null);
 
-  // const [filters, setFilters] = useState({
-  //   keyword: "",
-  //   category: "",
-  //   sex: "",
-  //   species: "",
-  //   locationId: "",
-  //   sortBy: "",
-  // });
-
   const loadOptions = useCallback(
     (inputValue, callback) => {
       if (!inputValue) {
@@ -129,29 +120,15 @@ const NoticesFilters = () => {
     dispatch(fetchCategories());
     dispatch(fetchSex());
     dispatch(fetchSpecies());
-    // dispatch(fetchLocations());
   }, [dispatch]);
-
-  // useEffect(() => {
-  //   dispatch(updateFilters(filters));
-  // }, [filters, dispatch]);
 
   const handleSearch = (keyword) => {
     dispatch(updateFilters({ ...filters, keyword }));
-    // setFilters((prevFilters) => ({ ...prevFilters, keyword }));
   };
 
   const handleChange = (name, value) => {
-    // setFilters((prevFilters) => ({ ...prevFilters, [name]: value }));
     dispatch(updateFilters({ ...filters, [name]: value }));
   };
-
-  // const handleSortChange = (event) => {
-  //   setFilters((prevFilters) => ({
-  //     ...prevFilters,
-  //     sortBy: event.target.value,
-  //   }));
-  // };
 
   const handleSortChange = (event) => {
     handleChange("sortBy", event.target.value);
@@ -171,14 +148,6 @@ const NoticesFilters = () => {
     value: species,
     label: species.charAt(0).toUpperCase() + species.slice(1),
   }));
-
-  // const ClearIndicator = (props) => (
-  //   <div onClick={props.clearValue} style={{ cursor: 'pointer', position: "absolute", top: "12px", right: "34px"}}>
-  //     <svg width="17" height="17">
-  //       <use xlinkHref={`${sprite}#black-x`} />
-  //     </svg>
-  //   </div>
-  // );
 
   return (
     <div className={css.filters}>
@@ -250,7 +219,6 @@ const NoticesFilters = () => {
         onInputChange={handleInputChange}
         onChange={handleLocationChange}
         value={selectedLocation}
-        // onChange={(option) => handleChange("location", option.value)}
         placeholder="Location"
         className={css.speciesOptions}
         styles={{
@@ -287,75 +255,74 @@ const NoticesFilters = () => {
       </svg>
 
       <div className={css.sortFilters}>
-      <input
-        type="radio"
-        id="popular"
-        name="sort"
-        value="popular"
-        onChange={handleSortChange}
-        className={css.sortInput}
-      />
-      <label htmlFor="popular" className={css.sortFiltersLabel}>
-        Popular
-        <span>
-          <svg width="18px" height="18px">
-            <use xlinkHref={`${sprite}#x`} />
-          </svg>
-        </span>
-      </label>
+        <input
+          type="radio"
+          id="popular"
+          name="sort"
+          value="popular"
+          onChange={handleSortChange}
+          className={css.sortInput}
+        />
+        <label htmlFor="popular" className={css.sortFiltersLabel}>
+          Popular
+          <span>
+            <svg width="18px" height="18px">
+              <use xlinkHref={`${sprite}#x`} />
+            </svg>
+          </span>
+        </label>
 
-      <input
-        type="radio"
-        id="unpopular"
-        name="sort"
-        value="unpopular"
-        onChange={handleSortChange}
-        className={css.sortInput}
-      />
-      <label htmlFor="unpopular" className={css.sortFiltersLabel}>
-        Unpopular
-        <span>
-          <svg width="18px" height="18px">
-            <use xlinkHref={`${sprite}#x`} />
-          </svg>
-        </span>
-      </label>
+        <input
+          type="radio"
+          id="unpopular"
+          name="sort"
+          value="unpopular"
+          onChange={handleSortChange}
+          className={css.sortInput}
+        />
+        <label htmlFor="unpopular" className={css.sortFiltersLabel}>
+          Unpopular
+          <span>
+            <svg width="18px" height="18px">
+              <use xlinkHref={`${sprite}#x`} />
+            </svg>
+          </span>
+        </label>
 
-      <input
-        type="radio"
-        id="cheap"
-        name="sort"
-        value="cheap"
-        onChange={handleSortChange}
-        className={css.sortInput}
-      />
-      <label htmlFor="cheap" className={css.sortFiltersLabel}>
-        Cheap
-        <span>
-          <svg width="18px" height="18px">
-            <use xlinkHref={`${sprite}#x`} />
-          </svg>
-        </span>
-      </label>
+        <input
+          type="radio"
+          id="cheap"
+          name="sort"
+          value="cheap"
+          onChange={handleSortChange}
+          className={css.sortInput}
+        />
+        <label htmlFor="cheap" className={css.sortFiltersLabel}>
+          Cheap
+          <span>
+            <svg width="18px" height="18px">
+              <use xlinkHref={`${sprite}#x`} />
+            </svg>
+          </span>
+        </label>
 
-      <input
-        type="radio"
-        id="expensive"
-        name="sort"
-        value="expensive"
-        onChange={handleSortChange}
-        className={css.sortInput}
-      />
-      <label htmlFor="expensive" className={css.sortFiltersLabel}>
-        Expensive
-        <span>
-          <svg width="18px" height="18px">
-            <use xlinkHref={`${sprite}#x`} />
-          </svg>
-        </span>
-      </label>
-    </div>
-
+        <input
+          type="radio"
+          id="expensive"
+          name="sort"
+          value="expensive"
+          onChange={handleSortChange}
+          className={css.sortInput}
+        />
+        <label htmlFor="expensive" className={css.sortFiltersLabel}>
+          Expensive
+          <span>
+            <svg width="18px" height="18px">
+              <use xlinkHref={`${sprite}#x`} />
+            </svg>
+          </span>
+        </label>
+      </div>
     </div>
   );
 };

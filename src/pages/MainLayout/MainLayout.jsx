@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import css from "./MainLayout.module.css";
-import Logo from '../../components/Logo/Logo';
-import { useNavigate } from 'react-router-dom';
-import Loader from '../../components/Loader/Loader';
+import Logo from "../../components/Logo/Logo";
+import { useNavigate } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
 
 const MainLayout = () => {
   const [loading, setLoading] = useState(true);
@@ -11,22 +11,24 @@ const MainLayout = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000); 
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleComplete = () => {
-    navigate('/home'); 
+    navigate("/home");
   };
-
-
 
   return (
     <div className={css.mainlayout}>
-     {loading ? <Logo variant="main" width="36" height="32" icon="iconMain" /> : <Loader onComplete={handleComplete} />}
+      {loading ? (
+        <Logo variant="main" width="36" height="32" icon="iconMain" />
+      ) : (
+        <Loader onComplete={handleComplete} />
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;

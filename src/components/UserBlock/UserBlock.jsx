@@ -22,13 +22,11 @@ const UserBlock = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const token = useSelector(selectToken);
 
-
-useEffect(() => {
+  useEffect(() => {
     if (isLoggedIn && token) {
       dispatch(currentUserFull());
     }
   }, [dispatch, isLoggedIn, token]);
-
 
   return (
     <div className={css.userBlock}>

@@ -7,7 +7,7 @@ import { logInValidationschema } from "../../validation/logInValidationShema";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import PetBlock from "../PetBlock/PetBlock";
-import dogImage from '../../assets/images/dog-mob-min.jpg';
+import dogImage from "../../assets/images/dog-mob-min.jpg";
 import { login } from "../../redux/users/userOps";
 
 const LoginForm = () => {
@@ -17,7 +17,7 @@ const LoginForm = () => {
     setShowPassword(!showPassword);
   };
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const {
     control,
@@ -41,7 +41,7 @@ const LoginForm = () => {
 
   return (
     <div className={css.containerForm}>
-      <PetBlock src={dogImage} alt="dog" className="image"/>
+      <PetBlock src={dogImage} alt="dog" className="image" />
       <div className={css.registerForm}>
         <h1 className={css.headerForm}>Log in</h1>
         <p className={css.textForm}>

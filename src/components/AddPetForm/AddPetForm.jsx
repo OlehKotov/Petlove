@@ -43,8 +43,8 @@ const AddPetForm = () => {
 
   const onSubmit = async (data) => {
     try {
-        await dispatch(addPet(data));
-        navigate('/profile');
+      await dispatch(addPet(data));
+      navigate("/profile");
     } catch (error) {
       alert("Error: " + error.response.data.message);
     }
@@ -124,7 +124,7 @@ const AddPetForm = () => {
               control={control}
               render={({ field }) => (
                 <input
-                className={`${css.inputFile} ${urlValue ? css.filled : ""}`}
+                  className={`${css.inputFile} ${urlValue ? css.filled : ""}`}
                   type="text"
                   {...field}
                   placeholder="Enter URL"
@@ -146,7 +146,9 @@ const AddPetForm = () => {
                 </svg>
               </label>
             </div>
-            {errors.imgURL && <p className={css.error}>{errors.imgURL.message}</p>}
+            {errors.imgURL && (
+              <p className={css.error}>{errors.imgURL.message}</p>
+            )}
           </div>
 
           <div className={css.formGroup}>
@@ -155,7 +157,7 @@ const AddPetForm = () => {
               control={control}
               render={({ field }) => (
                 <input
-                className={`${css.input} ${titleValue ? css.filled : ""}`}
+                  className={`${css.input} ${titleValue ? css.filled : ""}`}
                   id="title"
                   type="text"
                   placeholder="Title"
@@ -174,7 +176,7 @@ const AddPetForm = () => {
               control={control}
               render={({ field }) => (
                 <input
-                className={`${css.input} ${nameValue ? css.filled : ""}`}
+                  className={`${css.input} ${nameValue ? css.filled : ""}`}
                   type="text"
                   id="name"
                   placeholder="Pet's Name"
@@ -193,7 +195,9 @@ const AddPetForm = () => {
               control={control}
               render={({ field }) => (
                 <input
-                className={`${css.inputDate} ${birthdayValue ? css.filled : ""}`}
+                  className={`${css.inputDate} ${
+                    birthdayValue ? css.filled : ""
+                  }`}
                   type="text"
                   id="birthday"
                   placeholder="0000.00.00"
@@ -219,7 +223,9 @@ const AddPetForm = () => {
                   <select
                     {...field}
                     name="select"
-                    className={`${css.select} ${speciesValue ? css.filled : ""}`}
+                    className={`${css.select} ${
+                      speciesValue ? css.filled : ""
+                    }`}
                     onFocus={() => setIsFocused(true)}
                     onBlur={() => setIsFocused(false)}
                   >
@@ -231,7 +237,7 @@ const AddPetForm = () => {
                     <option value="monkey">Monkey</option>
                   </select>
                   <svg className={css.iconCalendar} width="18px" height="18px">
-                  <use xlinkHref={`${sprite}#${isFocused ? 'up' : 'down'}`} />
+                    <use xlinkHref={`${sprite}#${isFocused ? "up" : "down"}`} />
                   </svg>
                 </div>
               )}
@@ -243,7 +249,9 @@ const AddPetForm = () => {
         </div>
 
         <div className={css.formBtns}>
-          <Button path="/profile" className="formCancelBtn">Back</Button>
+          <Button path="/profile" className="formCancelBtn">
+            Back
+          </Button>
           <button type="submit" className={css.formSubmitBtn}>
             Submit
           </button>

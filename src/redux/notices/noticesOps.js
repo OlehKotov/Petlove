@@ -62,3 +62,41 @@ export const fetchLocations = createAsyncThunk(
     }
   }
 );
+
+export const fetchFavorite = createAsyncThunk(
+  "notices/fetchFavorite",
+  async (_id, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.user.user.token;
+    try {
+      const response = await instance.get(`/notices/${_id}`,  {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const fetchViewed = createAsyncThunk(
+  "notices/fetchViewed",
+  async (_id, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.user.user.token;
+    try {
+      const response = await instance.get(`/notices/${_id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  }
+);

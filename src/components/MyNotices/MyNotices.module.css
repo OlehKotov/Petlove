@@ -1,0 +1,35 @@
+.favContainer {
+  margin-top: 40px;
+}
+
+.activeButton {
+  border-radius: 30px;
+  padding: 12px;
+  width: 123px;
+  height: 42px;
+  background-color: #f6b83d;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.notActiveButton {
+  border-radius: 30px;
+  padding: 12px;
+  width: 123px;
+  height: 42px;
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.buttonWrap {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}

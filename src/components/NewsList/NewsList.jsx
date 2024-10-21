@@ -26,7 +26,7 @@ const NewsList = () => {
 
   useEffect(() => {
     dispatch(fetchNews({ keyword, page: currentPage, limit }));
-  }, [keyword, currentPage, limit, dispatch ]);
+  }, [keyword, currentPage, limit, dispatch]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -36,10 +36,9 @@ const NewsList = () => {
     return <div>Error: {error}</div>;
   }
 
-
   const handleSearch = (keyword) => {
     setKeyword(keyword);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
   const handlePageChange = (page) => {

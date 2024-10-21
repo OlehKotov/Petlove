@@ -14,7 +14,7 @@ const EditUserBtn = () => {
     setIsModalOpen(false);
   };
 
- return (
+  return (
     <>
       <button className={css.button} onClick={handleOpenModal}>
         <svg width="18px" height="18px">

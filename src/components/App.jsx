@@ -16,7 +16,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-
   return (
     <div>
       <Routes>
@@ -25,10 +24,38 @@ function App() {
         <Route path="/news" element={<NewsPage />} />
         <Route path="/notices" element={<NoticesPage />} />
         <Route path="/friends" element={<OurFriendsPage />} />
-        <Route path="/register" element={<RestrictedRoute><RegistrationPage /></RestrictedRoute>} />
-        <Route path="/login" element={<RestrictedRoute><LoginPage /></RestrictedRoute>} />
-        <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
-        <Route path="/add-pet" element={<PrivateRoute><AddPetPage /></PrivateRoute>} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute>
+              <RegistrationPage />
+            </RestrictedRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute>
+              <LoginPage />
+            </RestrictedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <ProfilePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/add-pet"
+          element={
+            <PrivateRoute>
+              <AddPetPage />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <ToastContainer autoClose={1500} />
