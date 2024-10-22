@@ -7,7 +7,9 @@ import { registrationValidationSchema } from "../../validation/registrationValid
 import sprite from "../../assets/icons/sprite.svg";
 import { NavLink } from "react-router-dom";
 import PetBlock from "../PetBlock/PetBlock";
-import catImage from "../../assets/images/cat-mob-min.jpg";
+import catImageMobile from "../../assets/images/cat-mob-min.jpg";
+import catImageTablet from "../../assets/images/cat-tab-min.png";
+import catImageDesktop from "../../assets/images/cat-dt-min.png";
 import { register } from "../../redux/users/userOps";
 
 const RegistrationForm = () => {
@@ -45,7 +47,9 @@ const RegistrationForm = () => {
 
   return (
     <div className={css.containerForm}>
-      <PetBlock src={catImage} alt="cat" className="image" />
+      <PetBlock srcMobile={catImageMobile}
+        srcTablet={catImageTablet}
+        srcDesktop={catImageDesktop} alt="cat" className="image" tab={true} />
       <div className={css.registerForm}>
         <h1 className={css.headerForm}>Registration</h1>
         <p className={css.textForm}>

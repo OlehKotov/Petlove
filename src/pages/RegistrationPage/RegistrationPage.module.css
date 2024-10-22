@@ -7,4 +7,15 @@
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    gap: 32px;
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+  }
 }

@@ -13,3 +13,28 @@
 .content {
   margin-top: 40px;
 }
+
+@media (min-width: 768px) {
+  .container {
+    gap: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 768px;
+    margin: 0 auto;
+  }
+
+  .content {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .container {
+    width: 1280px;
+  }
+
+  .content {
+    margin-top: 80px;
+  }
+}

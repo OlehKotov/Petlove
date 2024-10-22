@@ -33,6 +33,26 @@
   background-color: #f9b020;
 }
 
+.tabMenuLogInBtn {
+  border-radius: 30px;
+  padding: 15px 15px;
+  width: 119px;
+  height: 50px;
+  background-color: #f6b83d;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.tabMenuLogInBtn:hover,
+.tabMenuLogInBtn:active {
+  background-color: #f9b020;
+}
+
 .mobMenuRegistrationBtn {
   font-weight: 700;
   font-size: 14px;
@@ -49,6 +69,26 @@
 
 .mobMenuRegistrationBtn:hover,
 .mobMenuRegistrationBtn:active {
+  background-color: #fbe7c1;
+}
+
+.tabMenuRegistrationBtn {
+  border-radius: 30px;
+  padding: 15px 15px;
+  width: 149px;
+  height: 50px;
+  background-color: #fff4df;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #f6b83d;
+  transition: background-color 0.3s ease;
+}
+
+.tabMenuRegistrationBtn:hover,
+.tabMenuRegistrationBtn:active {
   background-color: #fbe7c1;
 }
 
@@ -112,4 +152,14 @@
 .formCancelBtn:hover,
 .formCancelBtn:active {
   background-color: rgba(38, 38, 38, 0.1);
+}
+
+@media (min-width: 768px) {
+  .notFoundButton {
+    padding: 14px 30px;
+    width: 162px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
 }

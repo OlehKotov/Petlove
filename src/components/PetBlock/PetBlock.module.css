@@ -9,3 +9,81 @@
   width: 335px;
   height: 213px;
 }
+
+.tab {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .imageContainer {
+    position: relative;
+  }
+  .tab {
+    display: block;
+    position: absolute;
+    top: 149px;
+    left: 32px;
+    border-radius: 20px;
+    width: 294px;
+    height: 121px;
+    background-color: #fff;
+    padding: 16px 16px 18px 16px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .tabImg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tabContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tabContentHeader {
+    display: flex;
+    gap: 48px;
+  }
+
+  .tabHeader {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 125%;
+    letter-spacing: -0.03em;
+    color: #f6b83d;
+  }
+
+  .tabHeaderDate {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 117%;
+    letter-spacing: -0.02em;
+    color: rgba(38, 38, 38, 0.5);
+  }
+
+  .tabHeaderDate span {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 117%;
+    letter-spacing: -0.02em;
+    color: #262626;
+  }
+
+  .tabText {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 117%;
+    letter-spacing: -0.02em;
+    color: rgba(38, 38, 38, 0.8);
+  }
+}
+
+@media (min-width: 1280px) {
+  .tab {
+    top: 436px;
+    left: 61px;
+  }
+}

@@ -17,3 +17,46 @@
   width: 100%;
   margin-top: 40px;
 }
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    gap: 15px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 768px;
+  }
+
+  .contentContainer {
+    margin-top: 50px;
+  }
+
+  .titleContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 337px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  .contentContainer {
+    margin-top: 80px;
+  }
+
+  .container {
+    gap: 15px;
+    padding-left: 64px;
+    padding-right: 63px;
+    width: 1280px;
+  }
+
+  .titleContainer {
+    gap: 785px;
+  }
+}

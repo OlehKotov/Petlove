@@ -23,7 +23,7 @@ const MainLayout = () => {
   return (
     <div className={css.mainlayout}>
       {loading ? (
-        <Logo variant="main" width="36" height="32" icon="iconMain" />
+        <Logo variant="main" icon="iconMain" />
       ) : (
         <Loader onComplete={handleComplete} />
       )}

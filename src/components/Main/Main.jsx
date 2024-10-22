@@ -8,15 +8,14 @@ const Main = () => {
       <Header
         isHeaderAuth="headerPosition"
         variant="home"
-        width="15"
-        height="13"
         icon="iconHome"
         burgerColor="#ffffff"
         closeColor="#000000"
         menuClass="menuWhite"
         nav="white"
+        isInHomeUserBar="true"
       />
-      <main>
+      <main className={css.main}>
         <div className={css.blockWithText}>
           <h1 className={css.blockHeader}>
             Take good <span>care</span> of your small pets

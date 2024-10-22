@@ -13,6 +13,21 @@
   letter-spacing: -0.04em;
 }
 
+.logo svg {
+  width: 17px;
+  height: 13px;
+}
+
+.logo.main svg {
+  width: 36px;
+  height: 32px;
+}
+
+.logo.home svg {
+  width: 17px;
+  height: 13px;
+}
+
 .logo.main {
   font-size: 50px;
   color: #fff;
@@ -47,3 +62,49 @@
   margin-right: 1.7px;
   fill: #f6b83d;
 }
+
+@media (min-width: 768px) {
+  .logo.auth {
+    font-size: 28px;
+  }
+
+  .iconAuth {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .logo svg {
+    width: 19px;
+    height: 17px;
+  }
+
+  .logo.home svg {
+    width: 19px;
+    height: 17px;
+  }
+
+  .logo.home {
+    font-size: 28px;
+    font-weight: 800;
+  }
+
+  .logo.main {
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+  }
+
+  .iconMain {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .logo.main svg {
+    width: 66px;
+    height: 58px;
+  }
+}
+

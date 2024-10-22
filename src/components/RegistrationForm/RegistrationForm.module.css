@@ -60,6 +60,10 @@
   position: relative;
 }
 
+.inputWrapper {
+  position: relative;
+}
+
 .passwordToggleIcon {
   position: absolute;
   right: 12px;
@@ -76,6 +80,8 @@
   letter-spacing: -0.03em;
   color: #ef2447;
   margin-left: 10px;
+  position: absolute;
+  top: 41px;
 }
 
 .errorInput {
@@ -124,4 +130,75 @@
 .navigationLink:hover,
 .navigationLink:active {
   color: #f9b020;
+}
+
+@media (min-width: 768px) {
+  .containerForm {
+    gap: 16px;
+  }
+
+  .registerForm {
+    border-radius: 60px;
+    width: 704px;
+    height: 560px;
+    padding: 30px 140px;
+  }
+
+  .headerForm {
+    font-size: 54px;
+  }
+
+  .textForm {
+    font-size: 18px;
+    line-height: 122%;
+    margin-top: 16px;
+  }
+
+  .form {
+    margin-top: 32px;
+    gap: 16px;
+  }
+
+  .registerInput {
+    width: 424px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .error {
+    font-size: 14px;
+    top: 51px;
+  }
+
+  .passwordToggleIcon {
+    right: 15px;
+  }
+
+  .button {
+    padding: 16px 99px;
+    width: 424px;
+    height: 52px;
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .navigationText {
+    font-size: 14px;
+    line-height: 143%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .containerForm {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .registerForm {
+    width: 592px;
+    height: 654px;
+    padding: 118px 84px;
+  }
 }

@@ -151,15 +151,64 @@ const NoticesFilters = () => {
 
   return (
     <div className={css.filters}>
-      <SearchField onSearch={handleSearch} variant="filtersBlock" />
+      <div className={css.filtersCont}>
+        <div className={css.filtersWrap}>
+          <SearchField onSearch={handleSearch} variant="filtersBlock" />
 
-      <div className={css.filtersCatandSex}>
-        <div className={css.inputWrap}>
+          <div className={css.filtersCatandSex}>
+            <div className={css.inputWrap}>
+              <Select
+                options={categoryOptions}
+                onChange={(option) => handleChange("category", option.value)}
+                placeholder="Category"
+                styles={customStyles}
+                components={{
+                  DropdownIndicator: () => (
+                    <svg className={css.icon} width="18px" height="18px">
+                      <use xlinkHref={`${sprite}#down`} />
+                    </svg>
+                  ),
+                }}
+              />
+            </div>
+            <div className={css.inputWrap}>
+              <Select
+                options={sexOptions}
+                onChange={(option) => handleChange("sex", option.value)}
+                placeholder="By gender"
+                classNamePrefix="testSelect"
+                styles={customStyles}
+                components={{
+                  DropdownIndicator: () => (
+                    <svg className={css.icon} width="18px" height="18px">
+                      <use xlinkHref={`${sprite}#down`} />
+                    </svg>
+                  ),
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className={css.filtersWrap}>
           <Select
-            options={categoryOptions}
-            onChange={(option) => handleChange("category", option.value)}
-            placeholder="Category"
-            styles={customStyles}
+            options={speciesOptions}
+            onChange={(option) => handleChange("species", option.value)}
+            placeholder="By type"
+            className={`${css.speciesOptions} testSelect`}
+            classNamePrefix="testSelect"
+            className={css.speciesOptions}
+            styles={{
+              ...customStyles,
+              control: (provided) => ({
+                ...customStyles.control(provided),
+                width: "295px",
+              }),
+              menu: (provided) => ({
+                ...customStyles.menu(provided),
+                width: "295px",
+              }),
+            }}
             components={{
               DropdownIndicator: () => (
                 <svg className={css.icon} width="18px" height="18px">
@@ -168,18 +217,43 @@ const NoticesFilters = () => {
               ),
             }}
           />
-        </div>
 
-        <div className={css.inputWrap}>
-          <Select
-            options={sexOptions}
-            onChange={(option) => handleChange("sex", option.value)}
-            placeholder="By gender"
-            styles={customStyles}
+          <AsyncSelect
+            isClearable
+            cacheOptions
+            loadOptions={loadOptions}
+            onInputChange={handleInputChange}
+            onChange={handleLocationChange}
+            value={selectedLocation}
+            placeholder="Location"
+            className={`${css.speciesOptions} testSelect`}
+            classNamePrefix="testSelect"
+            className={css.speciesOptions}
+            styles={{
+              ...customStyles,
+              control: (provided) => ({
+                ...customStyles.control(provided),
+                width: "295px",
+              }),
+              menu: (provided) => ({
+                ...customStyles.menu(provided),
+                width: "295px",
+              }),
+            }}
             components={{
               DropdownIndicator: () => (
                 <svg className={css.icon} width="18px" height="18px">
-                  <use xlinkHref={`${sprite}#down`} />
+                  <use xlinkHref={`${sprite}#search`} />
+                </svg>
+              ),
+              ClearIndicator: () => (
+                <svg
+                  className={css.iconX}
+                  width="18px"
+                  height="18px"
+                  onClick={() => handleLocationChange(null)}
+                >
+                  <use xlinkHref={`${sprite}#black-x`} />
                 </svg>
               ),
             }}
@@ -187,72 +261,7 @@ const NoticesFilters = () => {
         </div>
       </div>
 
-      <Select
-        options={speciesOptions}
-        onChange={(option) => handleChange("species", option.value)}
-        placeholder="By type"
-        className={css.speciesOptions}
-        styles={{
-          ...customStyles,
-          control: (provided) => ({
-            ...customStyles.control(provided),
-            width: "295px",
-          }),
-          menu: (provided) => ({
-            ...customStyles.menu(provided),
-            width: "295px",
-          }),
-        }}
-        components={{
-          DropdownIndicator: () => (
-            <svg className={css.icon} width="18px" height="18px">
-              <use xlinkHref={`${sprite}#down`} />
-            </svg>
-          ),
-        }}
-      />
-
-      <AsyncSelect
-        isClearable
-        cacheOptions
-        loadOptions={loadOptions}
-        onInputChange={handleInputChange}
-        onChange={handleLocationChange}
-        value={selectedLocation}
-        placeholder="Location"
-        className={css.speciesOptions}
-        styles={{
-          ...customStyles,
-          control: (provided) => ({
-            ...customStyles.control(provided),
-            width: "295px",
-          }),
-          menu: (provided) => ({
-            ...customStyles.menu(provided),
-            width: "295px",
-          }),
-        }}
-        components={{
-          DropdownIndicator: () => (
-            <svg className={css.icon} width="18px" height="18px">
-              <use xlinkHref={`${sprite}#search`} />
-            </svg>
-          ),
-          ClearIndicator: () => (
-            <svg
-              className={css.iconX}
-              width="18px"
-              height="18px"
-              onClick={() => handleLocationChange(null)}
-            >
-              <use xlinkHref={`${sprite}#black-x`} />
-            </svg>
-          ),
-        }}
-      />
-      <svg width="295px" height="2px" className={css.line}>
-        <use xlinkHref={`${sprite}#line`} />
-      </svg>
+      <div className={css.line}></div>
 
       <div className={css.sortFilters}>
         <input

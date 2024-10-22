@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { NavLink } from "react-router-dom";
 
 const Nav = ({ nav }) => {
+
   const linkActive = ({ isActive }) =>
     clsx(
       css.link,
@@ -11,6 +12,7 @@ const Nav = ({ nav }) => {
     );
 
   const linkClass = nav === "white" ? css.linkWhite : css.linkOrange;
+
 
   return (
     <div className={css.nav}>

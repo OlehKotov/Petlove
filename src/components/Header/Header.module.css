@@ -3,7 +3,7 @@
   background-color: #fff;
   width: 335px;
   position: relative;
-  overflow-y: auto;
+  margin: 0 auto;
 }
 
 .headerPosition {
@@ -81,4 +81,54 @@
 .burgerWrap {
   display: flex;
   gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .authWrap {
+    display: flex;
+    gap: 16px;
+  }
+  .header {
+    padding-top: 39px;
+    width: 704px;
+  }
+
+  .headerPosition {
+    top: 20px;
+    padding: 0 20px;
+  }
+
+  .burgerButton svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .burgerWrap {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header {
+    padding-top: 28px;
+    width: 1216px;
+    
+  }
+
+  .headerPosition {
+    padding: 0 25px;
+  }
+
+  .burgerButton {
+    display: none;
+  }
+
+  .userAuthContainer {
+    display: flex;
+    gap: 8px;
+  }
+
+  .container {
+    justify-content: start;
+  }
 }

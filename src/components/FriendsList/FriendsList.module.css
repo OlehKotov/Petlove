@@ -5,3 +5,10 @@
   flex-direction: column;
   gap: 20px;
 }
+
+@media (min-width: 768px) {
+  .friendsList {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

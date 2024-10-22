@@ -50,3 +50,34 @@
 .activeOrange {
   border-color: rgba(255, 255, 255, 0.5);
 }
+
+@media (min-width: 1280px) {
+  .nav {
+    flex-direction: row;
+    margin-top: 0;
+    margin-left: 300px;
+  }
+
+  .linkOrange {
+    border: 1px solid rgba(38, 38, 38, 0.15);
+    border-radius: 30px;
+    padding: 15px 2px;
+    height: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    letter-spacing: -0.03em;
+    color: #262626;
+    transition: border 0.3s ease;
+  }
+
+  .linkOrange:hover,
+  .linkOrange:active {
+    border: 1px solid #f6b83d;
+  }
+
+  .linkWhite {
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+}

@@ -21,7 +21,6 @@
 }
 
 .blockHeader {
-  font-family: var(--font-family);
   font-weight: 700;
   font-size: 50px;
   line-height: 96%;
@@ -40,4 +39,63 @@
   letter-spacing: -0.02em;
   color: #fff;
   padding-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .blockWithText,
+  .blockWithImg {
+    border-radius: 60px;
+    max-width: 704px;
+  }
+
+  .blockWithText {
+    padding: 178px 32px 41px 32px;
+  }
+
+  .blockWithImg {
+    height: 496px;
+    background-image: url(../../assets/images/backgroundBlockImgTab-min.png);
+    background-size: cover;
+  }
+
+  .blockHeader {
+    font-size: 80px;
+  }
+
+  .blockText {
+    font-size: 18px;
+    line-height: 122%;
+    padding-top: 32px;
+    padding-left: 417px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .blockWithText,
+  .blockWithImg {
+    border-radius: 60px;
+    max-width: 1216px;
+  }
+
+  .blockWithText {
+    padding: 178px 64px 32px 64px;
+    display: flex;
+    gap: 73px;
+  }
+
+  .blockWithImg {
+    height: 384px;
+    background-image: url(../../assets/images/backgroundBlockImgDt-min.png);
+  }
+
+  .blockHeader {
+    font-size: 90px;
+    width: 760px;
+  }
+
+  .blockText {
+    padding-left: 0;
+    width: 255px;
+    padding-top: 86px;
+  }
 }

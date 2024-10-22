@@ -6,6 +6,7 @@
   margin-top: 40px;
   padding: 20px;
 }
+
 .filtersCatandSex {
   display: flex;
   gap: 8px;
@@ -74,6 +75,9 @@
 }
 
 .line {
+  width: 295px;
+  height: 1px;
+  background-color: rgba(38, 38, 38, 0.1);
   margin-top: 20px;
 }
 
@@ -126,4 +130,122 @@ input[type="radio"]:checked + .sortFiltersLabel span {
 
 input[type="radio"]:checked + .sortFiltersLabel svg {
   stroke: #fff;
+}
+
+@media (min-width: 768px) {
+  .filters {
+    width: 704px;
+    height: 280px;
+    margin-top: 44px;
+    padding: 40px 32px;
+  }
+
+  .filtersWrap {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .filtersCatandSex {
+    display: flex;
+    gap: 16px;
+    margin-top: 0;
+  }
+
+  .icon {
+    right: 15px;
+  }
+
+  .iconX {
+    right: 38px;
+  }
+
+  .speciesOptions {
+    margin-top: 16px;
+    width: 295px;
+  }
+
+  .line {
+    width: 640px;
+  }
+
+  .sortFilters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .sortFiltersLabel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: -0.03em;
+    color: #262626;
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+@media (min-width: 1280px) {
+  .filters {
+    width: 1216px;
+    height: 216px;
+    margin-top: 40px;
+    padding: 40px 10px 40px 10px;
+  }
+
+  .filtersCont {
+    display: flex;
+    gap: 13px;
+  }
+
+  .filtersWrap {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+  }
+
+  .filtersCatandSex {
+    display: flex;
+    gap: 13px;
+    margin-top: 0;
+  }
+
+  .speciesOptions {
+    margin-top: 0;
+  }
+
+  .line {
+    width: 1185px;
+  }
+
+  .sortFilters {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .sortFiltersLabel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 129%;
+    letter-spacing: -0.03em;
+    color: #262626;
+    transition: background-color 0.3s, color 0.3s;
+  }
 }

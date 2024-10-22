@@ -8,3 +8,15 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (min-width: 768px) {
+  .mainlayout {
+    background-image: url("../../assets/images/background-imgTab-min.png");
+  }
+}
+
+@media (min-width: 1280px) {
+  .mainlayout {
+    background-image: url("../../assets/images/background-imgDt-min.png");
+  }
+}

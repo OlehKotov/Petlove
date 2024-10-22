@@ -31,3 +31,14 @@
 .spin {
   animation: spin 2s linear infinite;
 }
+
+@media (min-width: 768px) { 
+  .percent {
+    font-size: 80px;
+  }
+
+  .spin {
+    width: 427px;
+    height: 427px;
+  }
+}

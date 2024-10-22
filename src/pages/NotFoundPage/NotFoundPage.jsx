@@ -10,8 +10,6 @@ const NotFoundPage = () => {
       <Header
         isHeaderAuth="headerAuth"
         variant="auth"
-        width="17"
-        height="13"
         icon="iconAuth"
         burgerColor="#000000"
         closeColor="#ffffff"
@@ -20,7 +18,9 @@ const NotFoundPage = () => {
       />
       <div className={css.content}>
         <h1 className={css.contentHeader}>
-          4<img src={cat404} alt={"cat"} className={css.img} />4
+          4
+          <div className={css.img}></div>
+          4
         </h1>
         <p className={css.contentText}>Ooops! This page not found :(</p>
         <Button path="/home" className="notFoundButton">

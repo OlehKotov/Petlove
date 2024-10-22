@@ -4,3 +4,13 @@
   flex-direction: column;
   gap: 20px;
 }
+
+@media (min-width: 768px) { 
+  .noticesList {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
