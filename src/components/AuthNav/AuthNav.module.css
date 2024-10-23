@@ -23,6 +23,17 @@
   display: none;
 }
 
+.modalAuthNav {
+  gap: 8px; 
+  margin-top: 24px;
+  padding-top: 0;
+}
+
+.modalWrap {
+  display: flex;
+  gap: 8px;
+}
+
 @media (min-width: 1280px) {
   .menuAuthNav {
     margin-left: 102px;

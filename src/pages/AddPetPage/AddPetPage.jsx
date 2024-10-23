@@ -2,7 +2,9 @@ import React from "react";
 import css from "./AddPetPage.module.css";
 import Header from "../../components/Header/Header";
 import PetBlock from "../../components/PetBlock/PetBlock";
-import dog from "../../assets/images/AddPetDogMob-min.png";
+import dogMob from "../../assets/images/AddPetDogMob-min.png";
+import dogTab from "../../assets/images/AddPetDogTab-min.png";
+import dogDt from "../../assets/images/AddPetDogDt-min.png";
 import AddPetForm from "../../components/AddPetForm/AddPetForm";
 
 const AddPetPage = () => {
@@ -19,8 +21,17 @@ const AddPetPage = () => {
         menuClass="menuOrange"
         authNav="mobMenuLogInBtnOrange"
       />
-      <PetBlock src={dog} alt="dog" className="addPetImg" />
-      <AddPetForm />
+      <div className={css.content}>
+        <PetBlock
+          srcMobile={dogMob}
+          srcTablet={dogTab}
+          srcDesktop={dogDt}
+          alt="dog"
+          className="addPetImg"
+          showTab={false}
+        />
+        <AddPetForm />
+      </div>
     </div>
   );
 };

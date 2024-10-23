@@ -154,10 +154,69 @@
   background-color: rgba(38, 38, 38, 0.1);
 }
 
+.login {
+  border-radius: 30px;
+  padding: 12px 48px;
+  width: 135px;
+  height: 42px;
+  background-color: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.login:hover,
+.login:active {
+  background-color: #f9b020;
+}
+
+.register {
+  border-radius: 30px;
+  padding: 12px 24px;
+  width: 129px;
+  height: 42px;
+  background-color: #fff4df;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
+  transition: background-color 0.3s ease;
+}
+
+.register:hover,
+.register:active {
+  background-color: #fbe7c1;
+}
+
 @media (min-width: 768px) {
   .notFoundButton {
     padding: 14px 30px;
     width: 162px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .formCancelBtn {
+    width: 170px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .login {
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .register {
+    width: 140px;
     height: 48px;
     font-size: 16px;
     line-height: 125%;

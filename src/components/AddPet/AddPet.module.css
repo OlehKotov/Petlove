@@ -1,5 +1,6 @@
 .addPetContainer {
   display: flex;
+  align-items: center;
   gap: 131px;
 }
 
@@ -8,4 +9,21 @@
   font-size: 16px;
   line-height: 125%;
   color: #2b2b2a;
+}
+
+@media (min-width: 768px) {
+  .addPetContainer {
+    gap: 437px;
+  }
+  
+  .addPetHeader {
+    font-size: 18px;
+    line-height: 133%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .addPetContainer {
+    gap: 253px;
+  }
 }

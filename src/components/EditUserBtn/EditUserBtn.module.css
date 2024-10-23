@@ -14,3 +14,10 @@
 .button:active {
   background-color: #fbe7c1;
 }
+
+@media (min-width: 768px) {
+  .button {
+    top: 40px;
+    right: 40px;
+  }
+}

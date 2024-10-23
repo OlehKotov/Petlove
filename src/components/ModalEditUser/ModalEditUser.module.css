@@ -40,7 +40,6 @@
 
 .userContainerImgSvg {
   border-radius: 100px;
-  padding: 10px;
   width: 80px;
   height: 80px;
   background-color: #fff4df;
@@ -58,7 +57,6 @@
 }
 
 .input {
-  box-sizing: border-box;
   border: 1px solid rgba(38, 38, 38, 0.15);
   border-radius: 30px;
   padding: 12px 12px 12px 12px;
@@ -156,7 +154,6 @@ input::placeholder {
 
 .userContainerImgPhoto {
   border-radius: 100px;
-  padding: 10px;
   width: 80px;
   height: 80px;
   margin: 0 auto;
@@ -172,4 +169,87 @@ input::placeholder {
   position: absolute;
   top: 41px;
   left: 0;
+}
+
+@media (min-width: 768px) {
+  .modalContent {
+    width: 480px;
+    height: 580px;
+    padding: 50px;
+  }
+
+  .closeButton {
+    top: 20px;
+    right: 20px;
+  }
+
+  .header {
+    font-size: 18px;
+    line-height: 133%;
+  }
+
+  .userContainerImg {
+    width: 86px;
+    height: 86px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .userContainerImgSvg {
+    width: 86px;
+    height: 86px;
+  }
+
+  .userInfoForm {
+    gap: 20px;
+  }
+
+  .input {
+    width: 380px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  input::placeholder {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .inputFile {
+    width: 226px;
+    height: 42px;
+  }
+
+  .submitButton {
+    font-size: 16px;
+    line-height: 125%;
+    width: 380px;
+    height: 52px;
+    margin-top: 40px;
+  }
+
+  .inputFileBtn {
+    width: 146px;
+    height: 42px;
+    font-size: 14px;
+    line-height: 129%;
+  }
+
+  .userContainerImgPhoto {
+    width: 86px;
+    height: 86px;
+  }
+
+  .error {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 120%;
+    letter-spacing: -0.03em;
+    color: #ef2447;
+    margin-left: 10px;
+    position: absolute;
+    top: 41px;
+    left: 0;
+  }
 }

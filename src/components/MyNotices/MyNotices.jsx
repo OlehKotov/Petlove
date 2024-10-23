@@ -75,24 +75,43 @@ const MyNotices = () => {
         </button>
       </div>
 
-      <ul className={css.noticesFavoritesList}>
-        {activeTab === "favorites" &&
-          favoriteNotices.map((noticeItem) => (
-            <NoticesItem
-              key={noticeItem._id}
-              notice={noticeItem}
-              favorite={true}
-            />
-          ))}
-        {activeTab === "viewed" &&
-          viewedNotices.map((noticeItem) => (
-            <NoticesItem
-              key={noticeItem._id}
-              notice={noticeItem}
-              favorite={false}
-            />
-          ))}
-      </ul>
+      {activeTab === "favorites" &&
+        (favoriteNotices.length > 0 ? (
+          <ul className={css.noticesFavoritesList}>
+            {favoriteNotices.map((noticeItem) => (
+              <NoticesItem
+                key={noticeItem._id}
+                notice={noticeItem}
+                favorite={true}
+              />
+            ))}
+          </ul>
+        ) : (
+          <p className={css.placeholderText}>
+            Oops, <span>looks like there aren't any furries</span> on our
+            adorable page yet. Do not worry! View your pets on the "find your
+            favorite pet" page and add them to your favorites.
+          </p>
+        ))}
+
+      {activeTab === "viewed" &&
+        (viewedNotices.length > 0 ? (
+          <ul className={css.noticesFavoritesList}>
+            {viewedNotices.map((noticeItem) => (
+              <NoticesItem
+                key={noticeItem._id}
+                notice={noticeItem}
+                favorite={false}
+              />
+            ))}
+          </ul>
+        ) : (
+          <p className={css.placeholderText}>
+            Oops, <span>looks like there aren't any furries</span> on our
+            adorable page yet. Do not worry! View your pets on the "find your
+            favorite pet" page and add them to your favorites.
+          </p>
+        ))}
     </div>
   );
 };

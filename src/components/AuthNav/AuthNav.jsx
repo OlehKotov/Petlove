@@ -8,15 +8,32 @@ const AuthNav = ({ authNav, isInHeader, isInHome }) => {
   const { isAuth } = useAuth();
 
   return (
-    <div className={`${isInHeader ? css.headerAuthNav : css.menuAuthNav} ${isInHome ? css.headerHomeAuthNav : css.menuAuthNav}`}>
+    <div
+      className={`${isInHeader ? css.headerAuthNav : css.menuAuthNav} ${
+        isInHome ? css.headerHomeAuthNav : css.menuAuthNav
+      }`}
+    >
       {isAuth ? (
-        <LogOutBtn className={`${isInHeader ? "userBarlogoutButton" : "headerLogOutBtn"}`}/>
+        <LogOutBtn
+          className={`${
+            isInHeader ? "userBarlogoutButton" : "headerLogOutBtn"
+          }`}
+        />
       ) : (
         <>
-          <Button path="/login" className={`${isInHeader ? "tabMenuLogInBtn" : "mobMenuLogInBtn"}`} authTheme={authNav}>
+          <Button
+            path="/login"
+            className={`${isInHeader ? "tabMenuLogInBtn" : "mobMenuLogInBtn"}`}
+            authTheme={authNav}
+          >
             Log in
           </Button>
-          <Button path="/register"  className={`${isInHeader ? "tabMenuRegistrationBtn" : "mobMenuRegistrationBtn"}`}>
+          <Button
+            path="/register"
+            className={`${
+              isInHeader ? "tabMenuRegistrationBtn" : "mobMenuRegistrationBtn"
+            }`}
+          >
             Registration
           </Button>
         </>

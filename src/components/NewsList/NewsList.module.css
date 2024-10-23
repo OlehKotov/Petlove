@@ -27,7 +27,6 @@
   }
 
   .newsList {
-    gap: 40px 32px;
+    gap: 40px;
   }
 }
-

@@ -9,6 +9,7 @@ import {
   addFavoriteNotice,
   deleteFavoriteNotice,
 } from "../../redux/users/userOps";
+import ModalAttentionAction from "../ModalAttentionAction/ModalAttentionAction";
 
 const HeardButton = ({ noticeId }) => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const HeardButton = ({ noticeId }) => {
   const isFavorite = favoriteNotice.includes(noticeId);
 
   const [isClicked, setIsClicked] = useState(isFavorite);
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   useEffect(() => {
     setIsClicked(isFavorite);
@@ -41,24 +43,31 @@ const HeardButton = ({ noticeId }) => {
 
   const handleButtonClick = () => {
     if (!isAuth) {
-      toast.error("Please Log in and try again.");
+      setIsModalOpen(true);
       return;
     }
     handleClick();
   };
 
   return (
-    <button
-      className={`${css.noticeFavorite} ${
-        isClicked ? css.noticeFavoriteActive : ""
-      }`}
-      type="button"
-      onClick={handleButtonClick}
-    >
-      <svg className={css.noticeItemPopularityIcon} width="16" height="16">
-        <use xlinkHref={`${sprite}#heart`} />
-      </svg>
-    </button>
+    <>
+      <button
+        className={`${css.noticeFavorite} ${
+          isClicked ? css.noticeFavoriteActive : ""
+        }`}
+        type="button"
+        onClick={handleButtonClick}
+      >
+        <svg className={css.noticeItemPopularityIcon} width="16" height="16">
+          <use xlinkHref={`${sprite}#heart`} />
+        </svg>
+      </button>
+      <ModalAttentionAction
+        isOpen={isModalOpen}
+        onRequestClose={() => setIsModalOpen(false)}
+      />
+    </>
+   
   );
 };
 

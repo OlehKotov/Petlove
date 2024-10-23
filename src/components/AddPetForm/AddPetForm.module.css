@@ -283,3 +283,162 @@ input::placeholder {
 .select.filled {
   border-color: #f6b83d;
 }
+
+@media (min-width: 768px) {
+  .addPetFormContainer {
+    border-radius: 60px;
+    width: 704px;
+    height: 614px;
+    padding: 40px 136px;
+  }
+
+  .addPetFormHeader {
+    font-size: 32px;
+  }
+
+  .addPetFormHeader span {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .addPetForm {
+    margin-top: 40px;
+  }
+
+  .genderOption .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .genderError {
+    font-size: 12px;
+    margin-left: 10px;
+    top: 35px;
+    left: 0;
+  }
+
+  .error {
+    font-size: 12px;
+    margin-left: 10px;
+    top: 40px;
+    left: 0;
+  }
+
+  .userContainerImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .userContainerImgSvg {
+    width: 86px;
+    height: 86px;
+  }
+
+  .petInfoForm {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .formGroupImg {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    position: relative;
+  }
+
+  .inputFile {
+    width: 278px;
+    height: 42px;
+  }
+
+  .inputFileBtn {
+    width: 146px;
+    height: 42px;
+    font-size: 14px;
+    line-height: 129%;
+  }
+
+  .input {
+    width: 432px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  input::placeholder {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .formGroupDateSpec {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .inputDate {
+    width: 210px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .iconCalendar {
+    top: 16px;
+    right: 16px;
+  }
+
+  .formBtns {
+    margin-top: 40px;
+  }
+
+  .formSubmitBtn {
+    width: 170px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .select {
+    width: 210px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .label {
+    margin-bottom: 8px;
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
+  }
+
+  .select option {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .genderError {
+    top: 42px;
+    left: 0;
+  }
+
+  .error {
+    top: 42px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .addPetFormContainer {
+    border-radius: 60px;
+    width: 592px;
+    height: 654px;
+    padding: 60px 80px;
+  }
+}

@@ -42,3 +42,9 @@ body.modal-open {
 .modalContainer::-webkit-scrollbar-thumb:hover {
   background: #777;
 }
+
+@media (min-width: 768px) {
+  .modalContainer {
+    max-width: 480px;
+  }
+}

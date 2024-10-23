@@ -76,3 +76,35 @@
   cursor: pointer;
   z-index: 1001;
 }
+
+@media (min-width: 768px) {
+  .modalContent {
+    width: auto;
+    height: 364px;
+    padding: 80px;
+  }
+
+  .header {
+    font-size: 24px;
+    line-height: 117%;
+  }
+
+  .cancelButton {
+    width: 140x;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .confirmButton {
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .closeButton {
+    top: 20px;
+    right: 20px;
+  }
+}

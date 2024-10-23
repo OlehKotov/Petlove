@@ -33,3 +33,109 @@
   gap: 10px;
   margin-bottom: 20px;
 }
+
+.placeholderText {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #262626;
+  margin-top: 80px;
+  margin-bottom: 140px;
+  width: 335px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.placeholderText span {
+  font-weight: 700;
+  color: #f6b83d;
+}
+
+@media (min-width: 768px) {
+  .favContainer {
+    width: 704px;
+    margin: 0 auto;
+    margin-top: 32px;
+  }
+
+  .activeButton {
+    padding: 14px;
+    width: 142px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .notActiveButton {
+    width: 142px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .buttonWrap {
+    display: flex;
+    gap: 8px;
+  }
+
+  .noticesFavoritesList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .placeholderText {
+    font-size: 16px;
+    line-height: 125%;
+    margin: 0 auto;
+    margin-top: 180px;
+    margin-bottom: 182px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 458px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .favContainer {
+    width: 704px;
+    margin: 0 auto;
+    margin-top: 52px;
+  }
+
+  .activeButton {
+    padding: 14px;
+    width: 142px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .notActiveButton {
+    width: 142px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .buttonWrap {
+    display: flex;
+    gap: 8px;
+  }
+
+  .noticesFavoritesList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .placeholderText {
+    font-size: 16px;
+    line-height: 125%;
+    margin-top: 180px;
+    margin-bottom: 182px;
+    width: 458px;
+  }
+}
