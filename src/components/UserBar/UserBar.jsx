@@ -6,7 +6,6 @@ import { selectUserAvatar } from "../../redux/selectors";
 import { currentUserFull } from "../../redux/users/userOps";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../hooks/use-auth";
-import LogOutBtn from "../LogOutBtn/LogOutBtn";
 
 const UserBar = ({ isInHomeUserBar }) => {
   const dispatch = useDispatch();
