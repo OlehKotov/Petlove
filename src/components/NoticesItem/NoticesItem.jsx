@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "./NoticesItem.module.css";
 import sprite from "../../assets/icons/sprite.svg";
 import HeardButton from "../HeardButton/HeardButton";
@@ -6,11 +6,12 @@ import TrashButton from "../TrashButton/TrashButton";
 import { useDispatch, useSelector } from "react-redux";
 import { addNoticeToViewed } from "../../redux/users/userOps";
 import { selectUserNoticesViewed } from "../../redux/selectors";
+import ModalLearnMoreAction from "../ModalLearnMoreAction/ModalLearnMoreAction";
 
 const NoticesItem = ({ notice, favorite }) => {
   const dispatch = useDispatch();
-
   const viewed = useSelector(selectUserNoticesViewed);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleLearnMore = () => {
     const isViewed = viewed.some(
@@ -19,6 +20,11 @@ const NoticesItem = ({ notice, favorite }) => {
     if (!isViewed) {
       dispatch(addNoticeToViewed(notice));
     }
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -73,9 +79,11 @@ const NoticesItem = ({ notice, favorite }) => {
         {favorite ? (
           <TrashButton noticeId={notice._id} />
         ) : (
+          
           <HeardButton noticeId={notice._id} />
         )}
       </div>
+      <ModalLearnMoreAction isOpen={isModalOpen} onRequestClose={handleCloseModal} notice={notice} />
     </li>
   );
 };

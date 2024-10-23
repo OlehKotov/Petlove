@@ -1,0 +1,196 @@
+.modalContent {
+  border-radius: 30px;
+  width: 335px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 38px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+.img {
+  border-radius: 100px;
+  padding: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+.imgWrap {
+  position: relative;
+}
+
+.imgTab {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  border-radius: 30px;
+  padding: 8px 14px;
+  width: 48px;
+  height: 32px;
+  background-color: #fff4df;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  color: #f6b83d;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #2b2b2a;
+  margin-top: 20px;
+}
+
+.noticeItemPopularity {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  color: #2b2b2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noticeItemInfoContainer {
+  display: flex;
+  gap: 15px;
+  margin-top: 24px;
+}
+
+.noticeItemInfoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.noticeItemInfoItemHeader {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.noticeItemInfoItemText {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  color: #262626;
+}
+
+.noticeItemInfoComment {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #2b2b2a;
+  margin-top: 18px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.buttonAddToFavorites {
+  border-radius: 30px;
+  padding: 12px 31px;
+  width: 135px;
+  height: 44px;
+  background-color: #f6b83d;
+  display: flex;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.buttonAddToFavorites:hover,
+.buttonAddToFavorites:active {
+  background-color: #f9b020;
+}
+
+.buttonContact {
+  border-radius: 30px;
+  padding: 12px 37px;
+  width: 134px;
+  height: 44px;
+  background-color: #fff4df;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
+  transition: background-color 0.3s ease;
+}
+
+.buttonContact:hover,
+.buttonContact:active {
+  background-color: #fbe7c1;
+}
+
+@media (min-width: 768px) {
+  .modalContent {
+    width: auto;
+    height: auto;
+    padding: 40px 107px;
+  }
+
+  .closeButton {
+    top: 24px;
+    right: 24px;
+  }
+
+  .img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .imgTab {
+    position: absolute;
+    top: 0;
+    left: 8px;
+    width: 52px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 129%;
+  }
+
+  .header {
+    font-size: 18px;
+    line-height: 133%;
+    margin-top: 16px;
+  }
+
+  .noticeItemInfoContainer {
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .buttonAddToFavorites {
+    width: 160px;
+    height: 48px;
+  }
+
+  .buttonContact {
+    width: 160px;
+    height: 48px;
+  }
+}

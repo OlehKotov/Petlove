@@ -11,7 +11,7 @@ import {
 } from "../../redux/users/userOps";
 import ModalAttentionAction from "../ModalAttentionAction/ModalAttentionAction";
 
-const HeardButton = ({ noticeId }) => {
+const HeardButton = ({ noticeId, className, children }) => {
   const dispatch = useDispatch();
   const favoriteNotice = useSelector(selectUserNoticesFavorites);
   const { isAuth } = useAuth();
@@ -19,7 +19,7 @@ const HeardButton = ({ noticeId }) => {
   const isFavorite = favoriteNotice.includes(noticeId);
 
   const [isClicked, setIsClicked] = useState(isFavorite);
-  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     setIsClicked(isFavorite);
@@ -54,20 +54,21 @@ const HeardButton = ({ noticeId }) => {
       <button
         className={`${css.noticeFavorite} ${
           isClicked ? css.noticeFavoriteActive : ""
-        }`}
+        } ${className}`}
         type="button"
         onClick={handleButtonClick}
       >
-        <svg className={css.noticeItemPopularityIcon} width="16" height="16">
-          <use xlinkHref={`${sprite}#heart`} />
-        </svg>
+        {children || (
+          <svg className={css.noticeItemPopularityIcon} width="16" height="16">
+            <use xlinkHref={`${sprite}#heart`} />
+          </svg>
+        )}
       </button>
       <ModalAttentionAction
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
       />
     </>
-   
   );
 };
 
