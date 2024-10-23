@@ -197,7 +197,6 @@ const NoticesFilters = () => {
             placeholder="By type"
             className={`${css.speciesOptions} testSelect`}
             classNamePrefix="testSelect"
-            className={css.speciesOptions}
             styles={{
               ...customStyles,
               control: (provided) => ({
@@ -228,7 +227,6 @@ const NoticesFilters = () => {
             placeholder="Location"
             className={`${css.speciesOptions} testSelect`}
             classNamePrefix="testSelect"
-            className={css.speciesOptions}
             styles={{
               ...customStyles,
               control: (provided) => ({
