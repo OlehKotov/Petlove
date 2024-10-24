@@ -208,13 +208,8 @@ export const addFavoriteNotice = createAsyncThunk(
           },
         }
       );
-      toast.success("Add favorite successfully!");
       return response.data;
     } catch (error) {
-      toast.error(
-        "Failed to add favorite: " +
-          (error.response?.data?.message || "Unknown error")
-      );
       return thunkAPI.rejectWithValue(error.response.data);
     }
   }
@@ -235,13 +230,8 @@ export const deleteFavoriteNotice = createAsyncThunk(
           },
         }
       );
-      toast.success("Delete favorite successfully!");
       return response.data;
     } catch (error) {
-      toast.error(
-        "Failed to delete favorite: " +
-          (error.response?.data?.message || "Unknown error")
-      );
       return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }

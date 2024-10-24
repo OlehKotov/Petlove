@@ -84,6 +84,9 @@ const userSlice = createSlice({
       })
       .addCase(deleteFavoriteNotice.fulfilled, (state, action) => {
         state.isLoading = false;
+        // state.user.noticesFavorites = state.user.noticesFavorites.filter(
+        //   (noticesFavorite) => noticesFavorite._id !== action.payload._id
+        // );
         state.user.noticesFavorites = action.payload;
       })
       .addCase(addNoticeToViewed.fulfilled, (state, action) => {

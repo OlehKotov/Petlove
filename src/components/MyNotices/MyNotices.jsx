@@ -28,9 +28,9 @@ const MyNotices = () => {
       setFavoriteNotices(fetchedNotices);
     };
 
-    if (favorites.length > 0) {
+    // if (favorites.length > 0) {
       fetchFavorites();
-    }
+    // }
   }, [favorites, dispatch]);
 
   useEffect(() => {

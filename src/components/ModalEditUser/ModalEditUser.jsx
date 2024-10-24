@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "./ModalEditUser.module.css";
 import BaseModal from "../BaseModal/BaseModal";
 import sprite from "../../assets/icons/sprite.svg";
@@ -13,18 +13,21 @@ import { useForm } from "react-hook-form";
 import { editUser } from "../../redux/users/userOps";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { editUserValidationschema } from "../../validation/editUserValidationShema";
+import { uploadImageToCloudinary } from "../../utils/saveFileToCloudinary";
 
-const ModalEditUser = ({ isOpen, onRequestClose, isLoading, isError }) => {
+const ModalEditUser = ({ isOpen, onRequestClose }) => {
   const dispatch = useDispatch();
   const name = useSelector(selectUserName);
   const email = useSelector(selectUserEmail);
   const phone = useSelector(selectUserPhone);
   const avatar = useSelector(selectUserAvatar);
+  const [isUploading, setIsUploading] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm({
     resolver: yupResolver(editUserValidationschema),
     defaultValues: {
@@ -35,14 +38,60 @@ const ModalEditUser = ({ isOpen, onRequestClose, isLoading, isError }) => {
     },
   });
 
+  // const onSubmit = async (data) => {
+  //   try {
+  //     await dispatch(editUser(data));
+  //     onRequestClose();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   const onSubmit = async (data) => {
     try {
-      await dispatch(editUser(data));
-      onRequestClose();
+      // Если avatar пустой, значит, мы должны загрузить новое изображение
+      if (!data.avatar && data.file) {
+        const url = await uploadImageToCloudinary(data.file);
+        data.avatar = url; // Установи URL в поле avatar
+      }
+  
+      await dispatch(editUser(data)); // Отправь данные на сервер
+      onRequestClose(); // Закрой модальное окно
     } catch (error) {
       console.log(error);
     }
   };
+
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setIsUploading(true);
+      try {
+        const url = await uploadImageToCloudinary(file);
+        setValue("avatar", url);
+      } catch (error) {
+        console.error('Error uploading image:', error);
+      } finally {
+        setIsUploading(false);
+      }
+    }
+  };
+
+  // const handleFileChange = async (event) => {
+  //   const file = event.target.files[0];
+  //   if (file) {
+  //     setIsUploading(true);
+  //     try {
+  //       const url = await uploadImageToCloudinary(file);
+  //       setValue("avatar", url);
+  //     } catch (error) {
+  //       console.error('Error uploading image:', error);
+  //     } finally {
+  //       setIsUploading(false);
+  //     }
+  //   }
+  // };
+
 
   return (
     <BaseModal isOpen={isOpen} onRequestClose={onRequestClose}>
@@ -81,6 +130,7 @@ const ModalEditUser = ({ isOpen, onRequestClose, isLoading, isError }) => {
                 type="text"
                 {...register("avatar")}
                 placeholder={avatar ? avatar : "https://"}
+                readOnly
               />
 
               <div className={css.inputFileBtn}>
@@ -89,6 +139,7 @@ const ModalEditUser = ({ isOpen, onRequestClose, isLoading, isError }) => {
                   accept="image/*"
                   style={{ display: "none" }}
                   id="fileInput"
+                  onChange={handleFileChange}
                 />
                 <label htmlFor="fileInput">
                   Upload photo
