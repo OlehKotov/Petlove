@@ -134,16 +134,15 @@ const NoticesFilters = () => {
 
   const handleSortChange = (event) => {
     const { value } = event.target;
-    
+
     if (value === "popular") {
-      handleChange("byPopularity", false); 
+      handleChange("byPopularity", false);
     } else if (value === "unpopular") {
-      handleChange("byPopularity", true); 
+      handleChange("byPopularity", true);
     } else {
       handleChange("sortBy", value);
     }
   };
-
 
   const categoryOptions = categories.map((category) => ({
     value: category,
