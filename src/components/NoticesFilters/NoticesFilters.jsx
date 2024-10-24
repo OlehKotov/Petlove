@@ -27,6 +27,7 @@ const customStyles = {
     height: "42px",
     width: "143px",
     border: "none",
+    paddingRight: "40px",
   }),
   valueContainer: (provided) => ({
     ...provided,
@@ -83,8 +84,9 @@ const customStyles = {
 
 const NoticesFilters = () => {
   const dispatch = useDispatch();
-  const { categories, sex, species, locations, filters } =
+  const { categories, sex, species, locationId, byPopularity, filters } =
     useSelector(selectNotices);
+
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   const loadOptions = useCallback(
@@ -113,7 +115,7 @@ const NoticesFilters = () => {
 
   const handleLocationChange = (option) => {
     setSelectedLocation(option);
-    handleChange("location", option ? option.value : "");
+    handleChange("locationId", option ? option.value : "");
   };
 
   useEffect(() => {
@@ -131,8 +133,17 @@ const NoticesFilters = () => {
   };
 
   const handleSortChange = (event) => {
-    handleChange("sortBy", event.target.value);
+    const { value } = event.target;
+    
+    if (value === "popular") {
+      handleChange("byPopularity", false); 
+    } else if (value === "unpopular") {
+      handleChange("byPopularity", true); 
+    } else {
+      handleChange("sortBy", value);
+    }
   };
+
 
   const categoryOptions = categories.map((category) => ({
     value: category,

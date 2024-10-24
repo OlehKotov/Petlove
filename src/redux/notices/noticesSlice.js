@@ -20,7 +20,7 @@ const initialState = {
     category: "",
     sex: "",
     species: "",
-    location: "",
+    locationId: "",
     sortBy: "",
   },
   totalPages: 1,
@@ -31,7 +31,8 @@ const noticesSlice = createSlice({
   initialState,
   reducers: {
     updateFilters(state, action) {
-      state.filters = action.payload;
+      // state.filters = action.payload;
+      state.filters = { ...state.filters, ...action.payload };
     },
     clearLocations(state) {
       state.locations = [];

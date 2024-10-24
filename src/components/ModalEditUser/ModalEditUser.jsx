@@ -38,25 +38,15 @@ const ModalEditUser = ({ isOpen, onRequestClose }) => {
     },
   });
 
-  // const onSubmit = async (data) => {
-  //   try {
-  //     await dispatch(editUser(data));
-  //     onRequestClose();
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   const onSubmit = async (data) => {
     try {
-      // Если avatar пустой, значит, мы должны загрузить новое изображение
       if (!data.avatar && data.file) {
         const url = await uploadImageToCloudinary(data.file);
-        data.avatar = url; // Установи URL в поле avatar
+        data.avatar = url;
       }
-  
-      await dispatch(editUser(data)); // Отправь данные на сервер
-      onRequestClose(); // Закрой модальное окно
+
+      await dispatch(editUser(data));
+      onRequestClose();
     } catch (error) {
       console.log(error);
     }
@@ -70,28 +60,12 @@ const ModalEditUser = ({ isOpen, onRequestClose }) => {
         const url = await uploadImageToCloudinary(file);
         setValue("avatar", url);
       } catch (error) {
-        console.error('Error uploading image:', error);
+        console.error("Error uploading image:", error);
       } finally {
         setIsUploading(false);
       }
     }
   };
-
-  // const handleFileChange = async (event) => {
-  //   const file = event.target.files[0];
-  //   if (file) {
-  //     setIsUploading(true);
-  //     try {
-  //       const url = await uploadImageToCloudinary(file);
-  //       setValue("avatar", url);
-  //     } catch (error) {
-  //       console.error('Error uploading image:', error);
-  //     } finally {
-  //       setIsUploading(false);
-  //     }
-  //   }
-  // };
-
 
   return (
     <BaseModal isOpen={isOpen} onRequestClose={onRequestClose}>

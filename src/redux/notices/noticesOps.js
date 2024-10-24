@@ -4,9 +4,21 @@ import { instance } from "../users/userOps";
 export const fetchNotices = createAsyncThunk(
   "notices/fetchNotices",
   async ({ filters, page, limit }, { rejectWithValue }) => {
+    const { keyword, category, species, sex, byPopularity, locationId } = filters;
+    
+    const params = {
+      keyword,
+      category,
+      species,
+      sex,
+      byPopularity,
+      locationId,
+      page,
+      limit,
+    };
     try {
       const response = await instance.get("/notices/", {
-        params:  { filters, page, limit },
+        params,
       });
       return response.data;
     } catch (error) {
@@ -55,7 +67,9 @@ export const fetchLocations = createAsyncThunk(
   "notices/fetchLocations",
   async (query, { rejectWithValue }) => {
     try {
-      const { data } = await instance.get(`/cities?query=${query}`);
+      const { data } = await instance.get(`/cities?keyword=${query}`);
+      console.log(data);
+      
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data);
