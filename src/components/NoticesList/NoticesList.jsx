@@ -30,12 +30,15 @@ const NoticesList = () => {
 
   return (
     <div>
-      <ul className={css.noticesList}>
-        {Array.isArray(items.results) &&
-          items.results.map((noticeItem) => (
+      {Array.isArray(items.results) && items.results.length > 0 ? (
+        <ul className={css.noticesList}>
+          {items.results.map((noticeItem) => (
             <NoticesItem key={noticeItem._id} notice={noticeItem} />
           ))}
-      </ul>
+        </ul>
+      ) : (
+        <p className={css.noNotices}>Oops, <span>looks like there aren't any notifications</span> on our adorable page. Don't worry! Change filtering.</p>
+      )}
       {totalPages > 1 && (
         <Pagination
           currentPage={currentPage}

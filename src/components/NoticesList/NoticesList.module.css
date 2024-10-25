@@ -5,12 +5,42 @@
   gap: 20px;
 }
 
-@media (min-width: 768px) { 
+.noNotices {
+  width: 335px;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #262626;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.noNotices span {
+  font-weight: 700;
+  color: #f6b83d;
+}
+
+@media (min-width: 768px) {
   .noticesList {
     margin-top: 32px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .noNotices {
+    width: 458px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 129%;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #262626;
+    margin-top: 50px;
   }
 }

@@ -9,19 +9,21 @@ import { selectUserPetsImgURL } from "../../redux/selectors";
 import { addPet } from "../../redux/users/userOps";
 import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
+import { uploadImageToCloudinary } from "../../utils/saveFileToCloudinary";
 
 const AddPetForm = () => {
   const [isFocused, setIsFocused] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const avatar = useSelector(selectUserPetsImgURL);
+  const [isUploading, setIsUploading] = useState(false);
 
   const {
     register,
     handleSubmit,
     control,
     watch,
-    // reset,
+    setValue,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(addPetValidationSchema),
@@ -43,10 +45,30 @@ const AddPetForm = () => {
 
   const onSubmit = async (data) => {
     try {
+      if (!data.imgURL && data.file) {
+        const url = await uploadImageToCloudinary(data.file);
+        data.imgURL = url;
+      }
+
       await dispatch(addPet(data));
       navigate("/profile");
     } catch (error) {
       alert("Error: " + error.response.data.message);
+    }
+  };
+
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setIsUploading(true);
+      try {
+        const url = await uploadImageToCloudinary(file);
+        setValue("imgURL", url);
+      } catch (error) {
+        console.error("Error uploading image:", error);
+      } finally {
+        setIsUploading(false);
+      }
     }
   };
 
@@ -98,7 +120,6 @@ const AddPetForm = () => {
             <p className={css.genderError}>{errors.sex.message}</p>
           )}
         </div>
-
         {avatar ? (
           <div className={css.userContainerImg}>
             <img
@@ -116,6 +137,12 @@ const AddPetForm = () => {
             </div>
           </div>
         )}
+
+
+
+
+
+
 
         <div className={css.petInfoForm}>
           <div className={css.formGroupImg}>
@@ -138,6 +165,7 @@ const AddPetForm = () => {
                 accept="image/*"
                 style={{ display: "none" }}
                 id="imgUrl"
+                onChange={handleFileChange}
               />
               <label htmlFor="imgUrl">
                 Upload photo
@@ -150,6 +178,11 @@ const AddPetForm = () => {
               <p className={css.error}>{errors.imgURL.message}</p>
             )}
           </div>
+
+
+
+
+
 
           <div className={css.formGroup}>
             <Controller
