@@ -10,6 +10,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     window.scrollTo(0, 0);
   };
 
+
   const handleFirstPage = () => {
     handlePageChange(1);
   };

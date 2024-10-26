@@ -7,9 +7,10 @@ import {
   fetchSex,
   fetchSpecies,
   fetchLocations,
+  fetchAllLocations,
 } from "../../redux/notices/noticesOps";
 import css from "./NoticesFilters.module.css";
-import { selectNotices } from "../../redux/selectors";
+import { selectFiltersLocation, selectNotices } from "../../redux/selectors";
 import {
   clearLocations,
   updateFilters,
@@ -84,26 +85,31 @@ const customStyles = {
 
 const NoticesFilters = () => {
   const dispatch = useDispatch();
-  const { categories, sex, species, locationId, byPopularity, filters } =
-    useSelector(selectNotices);
-
+  const { categories, sex, species, filters } = useSelector(selectNotices);
+  const locations = useSelector(selectFiltersLocation);
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   const loadOptions = useCallback(
     (inputValue, callback) => {
       if (!inputValue) {
-        callback([]);
-        return;
-      }
-      dispatch(fetchLocations(inputValue)).then((action) => {
-        if (action.payload) {
+        dispatch(fetchAllLocations()).then((action) => {
           const options = action.payload.map((location) => ({
             value: location._id,
             label: `${location.cityEn}, ${location.stateEn}, ${location.countyEn}`,
           }));
           callback(options);
-        }
-      });
+        });
+      } else {
+        dispatch(fetchLocations(inputValue)).then((action) => {
+          const options = Array.isArray(action.payload)
+            ? action.payload.map((location) => ({
+                value: location._id,
+                label: `${location.cityEn}, ${location.stateEn}, ${location.countyEn}`,
+              }))
+            : [];
+          callback(options);
+        });
+      }
     },
     [dispatch]
   );
@@ -128,9 +134,16 @@ const NoticesFilters = () => {
     dispatch(updateFilters({ ...filters, keyword }));
   };
 
-  const handleChange = (name, value) => {
-    dispatch(updateFilters({ ...filters, [name]: value }));
-  };
+  // const handleChange = (name, value) => {
+  //   dispatch(updateFilters({ ...filters, [name]: value }));
+  // };
+
+  const handleChange = useCallback(
+    (name, value) => {
+      dispatch(updateFilters({ ...filters, [name]: value }));
+    },
+    [dispatch, filters]
+  );
 
   const handleSortChange = (event) => {
     const { value } = event.target;
@@ -157,6 +170,11 @@ const NoticesFilters = () => {
   const speciesOptions = species.map((species) => ({
     value: species,
     label: species.charAt(0).toUpperCase() + species.slice(1),
+  }));
+
+  const locationOptions = locations.map((location) => ({
+    value: location._id,
+    label: `${location.cityEn}, ${location.stateEn}, ${location.countyEn}`,
   }));
 
   return (
@@ -230,10 +248,12 @@ const NoticesFilters = () => {
           <AsyncSelect
             isClearable
             cacheOptions
+            defaultOptions={locationOptions}
             loadOptions={loadOptions}
             onInputChange={handleInputChange}
             onChange={handleLocationChange}
             value={selectedLocation}
+            onFocus={() => loadOptions("", () => {})}
             placeholder="Location"
             className={`${css.speciesOptions} testSelect`}
             classNamePrefix="testSelect"

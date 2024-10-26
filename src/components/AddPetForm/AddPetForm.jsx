@@ -137,13 +137,6 @@ const AddPetForm = () => {
             </div>
           </div>
         )}
-
-
-
-
-
-
-
         <div className={css.petInfoForm}>
           <div className={css.formGroupImg}>
             <Controller
@@ -158,7 +151,6 @@ const AddPetForm = () => {
                 />
               )}
             />
-
             <div className={css.inputFileBtn}>
               <input
                 type="file"
@@ -178,12 +170,6 @@ const AddPetForm = () => {
               <p className={css.error}>{errors.imgURL.message}</p>
             )}
           </div>
-
-
-
-
-
-
           <div className={css.formGroup}>
             <Controller
               name="title"

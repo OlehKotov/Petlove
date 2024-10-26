@@ -1,7 +1,7 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import {
   fetchCategories,
-  fetchLocations,
+  fetchAllLocations,
   fetchNotices,
   fetchSex,
   fetchSpecies,
@@ -54,7 +54,7 @@ const noticesSlice = createSlice({
       .addCase(fetchSpecies.fulfilled, (state, action) => {
         state.species = action.payload.species;
       })
-      .addCase(fetchLocations.fulfilled, (state, action) => {
+      .addCase(fetchAllLocations.fulfilled, (state, action) => {
         state.locations = action.payload;
       })
       .addMatcher(
@@ -63,7 +63,7 @@ const noticesSlice = createSlice({
           fetchCategories.pending,
           fetchSex.pending,
           fetchSpecies.pending,
-          fetchLocations.pending,
+          fetchAllLocations.pending,
         ),
         (state) => {
           state.isLoading = true;
@@ -76,7 +76,7 @@ const noticesSlice = createSlice({
           fetchCategories.rejected,
           fetchSex.rejected,
           fetchSpecies.rejected,
-          fetchLocations.rejected
+          fetchAllLocations.rejected
         ),
         (state, action) => {
           state.isLoading = false;

@@ -12,13 +12,15 @@ import Pagination from "../Pagination/Pagination";
 
 const NoticesList = () => {
   const dispatch = useDispatch();
-
   const items = useSelector(selectNoticesItems);
   const filters = useSelector(selectFilters);
   const totalPages = useSelector(selectNoticesTotalPages);
-
   const [currentPage, setCurrentPage] = useState(1);
   const [limit] = useState(6);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filters]);
 
   useEffect(() => {
     dispatch(fetchNotices({ filters, page: currentPage, limit }));
@@ -37,7 +39,10 @@ const NoticesList = () => {
           ))}
         </ul>
       ) : (
-        <p className={css.noNotices}>Oops, <span>looks like there aren't any notifications</span> on our adorable page. Don't worry! Change filtering.</p>
+        <p className={css.noNotices}>
+          Oops, <span>looks like there aren't any notifications</span> on our
+          adorable page. Don't worry! Change filtering.
+        </p>
       )}
       {totalPages > 1 && (
         <Pagination

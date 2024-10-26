@@ -4,8 +4,9 @@ import { instance } from "../users/userOps";
 export const fetchNotices = createAsyncThunk(
   "notices/fetchNotices",
   async ({ filters, page, limit }, { rejectWithValue }) => {
-    const { keyword, category, species, sex, byPopularity, locationId } = filters;
-    
+    const { keyword, category, species, sex, byPopularity, locationId } =
+      filters;
+
     const params = {
       keyword,
       category,
@@ -63,13 +64,23 @@ export const fetchSpecies = createAsyncThunk(
   }
 );
 
+export const fetchAllLocations = createAsyncThunk(
+  "notices/fetchAllLocations",
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await instance.get(`/cities/locations`);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
 export const fetchLocations = createAsyncThunk(
   "notices/fetchLocations",
   async (query, { rejectWithValue }) => {
     try {
       const { data } = await instance.get(`/cities?keyword=${query}`);
-      console.log(data);
-      
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -83,12 +94,12 @@ export const fetchFavorite = createAsyncThunk(
     const state = thunkAPI.getState();
     const token = state.user.user.token;
     try {
-      const response = await instance.get(`/notices/${_id}`,  {
+      const response = await instance.get(`/notices/${_id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      
+
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
@@ -107,7 +118,7 @@ export const fetchViewed = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       });
-      
+
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
